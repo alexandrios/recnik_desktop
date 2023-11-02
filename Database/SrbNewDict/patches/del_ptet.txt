@@ -1,0 +1,56 @@
+delete from words where name_lat='potpretsednik';
+delete from words where name_lat='potpretsednički';
+delete from words where name_lat='pretsedavati';
+delete from words where name_lat='pretsednik';
+delete from words where name_lat='pretsednički';
+delete from words where name_lat='pretsedništvo';
+delete from words where name_lat='pretskazati';
+delete from words where name_lat='pretskazivati';
+delete from words where name_lat='pretslutnja';
+delete from words where name_lat='pretsmrtan';
+delete from words where name_lat='pretsoblje';
+
+
+delete from words where name_lat='pretsrđe';
+delete from words where name_lat='pretstava';
+delete from words where name_lat='pretstaviti';
+delete from words where name_lat='pretstavka';
+delete from words where name_lat='pretstavljati';
+
+delete from words where name_lat='pretstavnik';
+delete from words where name_lat='pretstavnički';
+delete from words where name_lat='pretstavništvo';
+delete from words where name_lat='pretstajanje';
+delete from words where name_lat='pretstanak';
+delete from words where name_lat='pretstajati';
+delete from words where name_lat='pretstati';
+delete from words where name_lat='pretstojati';
+delete from words where name_lat='pretstojnik';
+delete from words where name_lat='pretstraža';
+delete from words where name_lat='pretstražni';
+delete from words where name_lat='pretsmrtni';
+
+'предсердие'  'предсрђе'
+'представление' 'поднесак;представа;представка;умисао'
+'понятие' 'појам;представа'
+'спектакль'  'представа'
+'киносеанс' 'представа'
+'докладная записка' 'представка'
+'письменный доклад' 'представка'
+'предложение' 'нуђење;поднесак;понуда;предлог;представка;реченица'
+представить заступити;осликати;преставити;представити
+вообразить представити;умислити;уобразити
+изобразить осликати;представити
+сыграть изиграти;исвирати;одиграти;отсвирати;представити;свирнути
+представиться казати;надати се;преставити;представити;указати;утворити;учинити
+умереть изврнути;издахнути;лепунути;одаламити;одалачити;пенути;помрети;преминути;представити;самрети;свиснути;скончати;умрети;упокојити се
+преставиться преставити;представити
+представлять заступати;престављати;представљати;репрезентовати
+воображать маштати;представљати;умишљати;уображавати
+
+эксперимент №1
+предстати : появиться;явиться;предстать
+появиться доћи;изићи;измолити;изникнути;искрснути;иступити;јавити;
+наићи;појавити се;помолити;поникнути;претстати;створити;указати;предстати
+явиться претстати;пријавити;предстати
+предстать претстати;предстати

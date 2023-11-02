@@ -1,0 +1,36 @@
+1. Демоверсия на базе SQLite:
+
+#define DEMO
+---------------
+Programs
+SerialNum
+InitForm
+ListForm
+SyllableForm
+SplashForm
+Data
+ADSData
+SQLiteData
+SetupForm
+---------------
+SRDict (SQLite)
+
+
+2. Демоверсия на базе ADSData:
+[Отказался от её создания, так как не могу придумать, как сделать, чтобы нельзя было]
+[подставить полную версию БД на место демонстрационной БД.                          ]
+Идея такая: в демо-версии проверять кол-во записей в таблице Words и если их > 600, то прекращать работу!
+
+#define DEMO
+---------------
+Programs
+SerialNum
+InitForm
+ListForm -?
+SyllableForm
+SplashForm
+Data
+ADSData
+SQLiteData
+---------------
+
