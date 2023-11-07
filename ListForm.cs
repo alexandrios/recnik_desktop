@@ -118,6 +118,7 @@ namespace SRWords
 
             // Отключить контекстное меню браузера 
             _webBrowser.IsWebBrowserContextMenuEnabled = false;
+
             //_webBrowser.ContextMenu.Popup += new EventHandler(ContextMenu_Popup);
             //_webBrowser.ContextMenuStrip.Opening += new CancelEventHandler(ContextMenuStrip_Opening);
 
@@ -445,24 +446,25 @@ namespace SRWords
                 int pos = CurrentBS().Find("NAME", currWord.Name);
                 if (pos > -1)
                     CurrentBS().Position = pos;
+
+                if (currTableName == "words" || currTableName == "dict")
+                {
+                    // Позиционировать слово в середину грида
+                    SetCenterFoundRow();
+
+                    // Изменить язык ввода 
+                    SetKeyboardInputLanguageForSRB(Setup_SrbAlphabet);
+
+                    // Изменить окно поиска по буквам
+                    ReloadSyllableForm();
+                }
+
+                // Окно виртуальной клавиатуры изменится само, по таймеру
             }
-
-            // Перейти к текущему слову
-            ShowCurrentWord();
-
-            if (currTableName == "words" || currTableName == "dict")
+            else
             {
-                // Позиционировать слово в середину грида
-                SetCenterFoundRow();
-
-                // Изменить язык ввода 
-                SetKeyboardInputLanguageForSRB(Setup_SrbAlphabet);
-
-                // Изменить окно поиска по буквам
-                ReloadSyllableForm();
+                ShowCurrentWord();
             }
-
-            // Окно виртуальной клавиатуры изменится само, по таймеру
         }
 
         /// <summary>
@@ -538,7 +540,7 @@ namespace SRWords
                         dtSrb = Data.LoadAllDictCL(tableName);
 
                         dataViewSrbCyr.Table = dtSrb;
-                        dataViewSrbCyr.Sort = "NAME_RUS";
+                        dataViewSrbCyr.Sort = "NAME_CYR";
                         dataViewSrbLat.Table = dtSrb;
                         dataViewSrbLat.Sort = "NAME";
                     }
@@ -565,7 +567,7 @@ namespace SRWords
                     dtDict = Data.LoadUserDictCL(dictId);
                     
                     dataViewDictCyr.Table = dtDict;
-                    dataViewDictCyr.Sort = "NAME_RUS";
+                    dataViewDictCyr.Sort = "NAME_CYR";
                     dataViewDictLat.Table = dtDict;
                     dataViewDictLat.Sort = "NAME";
 
@@ -595,7 +597,7 @@ namespace SRWords
                     {
                         System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("sr-Cyrl-CS");
                         CurrentBS().DataSource = (tableName == "words") ? dataViewSrbCyr : dataViewDictCyr;
-                        CurrentBS().Sort = "NAME_RUS";
+                        CurrentBS().Sort = "NAME_CYR";
                     }
                     else
                     {
@@ -749,7 +751,6 @@ namespace SRWords
                     _searchTextBox.TextChanged += _searchTextBox_TextChanged;
                 }
             }
-
         }
 
         /*
@@ -1459,7 +1460,31 @@ namespace SRWords
         {
             e.Cancel = false;
             string url = e.Url.ToString();
-            if (url.Contains("@@"))
+            if (url.Contains("^"))
+            {
+                string s = url.Substring(url.IndexOf("^") + 1);
+                
+                // Для русско-сербского: подгружаем статьи по мере необходимости
+                if (currTableName == "rus")
+                {
+                    HtmlDocument doc = (sender as WebBrowser).Document;
+                    HtmlElement element = doc.GetElementById(s.Replace(" ", "_"));
+                    if (element != null)
+                    {
+                        if (element.InnerText == "#")
+                        {
+                            // Загрузить статью
+                            DataRowView dr = (DataRowView)_rusBindingSource.Current;
+                            if (dr != null)
+                            {
+                                element.InnerHtml = GetHtmlByName(true, dr["NAME"].ToString(), s, 0);
+                            }
+                        }
+                    }
+                }
+                e.Cancel = true;
+            }
+            else if (url.Contains("@@"))
             {
                 string s = url.Substring(url.IndexOf("@@") + 2);
                 rusItem_Click(null, null);
@@ -1475,21 +1500,10 @@ namespace SRWords
                 {
                     e.Cancel = true;
                 }
-                // Для русско-сербского: подгружаем статьи по мере необходимости
                 else if (currTableName == "rus")
                 {
-                    HtmlDocument doc = (sender as WebBrowser).Document;
-                    HtmlElement element = doc.GetElementById(s.Replace(" ", "_"));
-                    if (element.InnerText == "#")
-                    {
-                        // Загрузить статью
-                        DataRowView dr = (DataRowView)_rusBindingSource.Current;
-                        if (dr != null)
-                        {
-                            element.InnerHtml = GetHtmlByName(true, dr["NAME"].ToString(), s, 0);
-                        }
-                    }
-
+                    baseItem_Click(null, null);
+                    GoToReference(s);
                     e.Cancel = true;
                 }
                 else if (currTableName == "words")

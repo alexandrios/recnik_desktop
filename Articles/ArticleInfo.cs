@@ -931,7 +931,7 @@ namespace SRWords.Articles
                                     int pos = buf.ToString().LastIndexOf("@R@");
                                     string href = "<SPAN CLASS=\"RusWord\">";
                                     href += "<A HREF=\"@@" + /*LangUtils.removeBraces(goesValued)*/ goesValued + "\" CLASS=\"RusRef\">";
-                                    href += "</ SPAN >";
+                                    href += "</SPAN>";
                                     buf = new StringBuilder(buf.ToString().Substring(0, pos) + href + buf.ToString().Substring(pos + 3));
                                     goesValued = "";
                                 }
@@ -991,15 +991,24 @@ namespace SRWords.Articles
 
                             if (w.V)
                             {
-                                // Обратный словарь: выделить русское слово
+                                // Обратный словарь: выделить русское слово (Русско-сербский: раскрываем статьи сербских ключевых слов)
+                                // Актуально только в desktop-версии, в мобильном приложении rusKey всегда null
+                                /*
                                 if (rusKey.Length > 0 && EqualFullValuedByPart(rusKey, i))
                                 {
+                                    
+                                    //string href = "<SPAN CLASS=\"RusWord\" STYLE=\"background-color=" + YELLOW_BGR + ";\">";
+                                    //href += "<A HREF=\"@@" + rusKey + "\" CLASS=\"RusRef\">";
+                                    //href += "</SPAN>";
+                                    //buf.Append(href);
+                                    
                                     buf.Append("<SPAN CLASS=\"RusWord\" STYLE=\"background-color=" + YELLOW_BGR + ";\">");
                                     buf.Append(GetRusWordForHTML(w, rusAccentType));
                                     buf.Append("</SPAN>");
                                 }
                                 else
                                 {
+                                */
                                     // блок реализации ссылок на русские ключевые слова
                                     if (String.IsNullOrEmpty(goesValued))
                                     {
@@ -1007,9 +1016,8 @@ namespace SRWords.Articles
                                         {
                                             string href = "<SPAN CLASS=\"RusWord\">";
                                             href += "<A HREF=\"@@" + /*LangUtils.removeBraces(w.N)*/ w.N + "\" CLASS=\"RusRef\">";
-                                            href += "</ SPAN >";
+                                            //href += "</SPAN>";
                                             buf.Append(href);
-                                            //buf.Append("<A HREF=\"@@" + /*LangUtils.removeBraces(w.N)*/ w.N + "\" CLASS=\"RusRef\">");
                                         }
                                         else
                                         {
@@ -1026,6 +1034,7 @@ namespace SRWords.Articles
                                                 goesValued += " ";
                                             }
                                         }
+                                        goesValued += w.N;
                                     }
 
                                     //buf.Append("<SPAN CLASS=\"RusWord\">");
@@ -1040,14 +1049,15 @@ namespace SRWords.Articles
                                             int pos = buf.ToString().LastIndexOf("@R@");
                                             string href = "<SPAN CLASS=\"RusWord\">";
                                             href += "<A HREF=\"@@" + /*LangUtils.removeBraces(goesValued)*/ goesValued + "\" CLASS=\"RusRef\">";
-                                            href += "</ SPAN >";
+                                            //href += "</SPAN>";
                                             //string href = "<A HREF=\"@@" + /*LangUtils.removeBraces(goesValued)*/ goesValued + "\" CLASS=\"RusRef\">";
                                             buf = new StringBuilder(buf.ToString().Substring(0, pos) + href + buf.ToString().Substring(pos + 3));
                                             goesValued = "";
                                         }
                                         buf.Append("</A>");
+                                        buf.Append("</SPAN>");
                                     }
-                                }
+                                //}
                             }
                             else
                             {

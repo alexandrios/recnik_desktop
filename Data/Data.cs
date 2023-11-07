@@ -51,7 +51,7 @@ namespace SRWords
                 row["NAME"] = SRWords.Articles.Utils.LatToCyr(row["NAME_LAT"].ToString());
             }
 #else
-            string sql = "select name, name_rus, stress, kw, xml from " + tableName;
+            string sql = "select name, name_cyr, stress, kw, xml from " + tableName;
             DataTable dataTable = ADSData.GetTableBySelect(sql);
 #endif
             return dataTable;
@@ -186,8 +186,8 @@ namespace SRWords
         /// <returns></returns>
         public static DataTable LoadUserDictCL(int idDict)
         {
-            string sql = "select w.Name, w.Name_rus, w.Xml, d.Status, d.Rw " +
-                "from words w inner join dict d on w.Name = d.Name where d.IdDict=" + idDict.ToString();
+            string sql = "select w.name, w.name_cyr, w.xml, d.status, d.rw " +
+                "from words w inner join dict d on w.name = d.name where d.iddict=" + idDict.ToString();
 #if DEMO || SQLITE
             DataTable dataTable = SQLiteData.GetTableBySelect(sql);
 #else

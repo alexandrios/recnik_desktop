@@ -39,8 +39,8 @@ namespace SRWords
             this.Name = dr["NAME"].ToString();
 
             this.srbDataView = srbDataView;
-            if (this.srbDataView != null)
-                this.srbDataView.Sort = "NAME";
+            //if (this.srbDataView != null)
+            //    this.srbDataView.Sort = "NAME";
 
             this.Setup_SrbAlphabet = setup_SrbAlphabet;
             this.Setup_RusAccent = setup_RusAccent;
@@ -120,38 +120,29 @@ namespace SRWords
             int cnt = aList.Count;
             string display = cnt == 1 ? "block" : multiRusValuesOpened ? "block" : "none";
             string nameId;
-            //t += "<table>";
+
             foreach (string s in aList)
             {
-                //t += "<tr><td>";
                 nameId = s.Replace(" ", "_");
-                t += "<a href=\"@" + s + "\" class=\"OpenHide\" " +
+                t += "<a href=\"^" + s + "\" class=\"OpenHide\" " +
                      "style=\"color:black; font:normal 16px Arial;\" " +
                      //"onclick=\"facechange('#" + nameId + "'); return true;\">" +
                      "onclick=\"viewdiv('" + nameId + "'); return true;\">" +
-                     //s + "</a>" +
                      (Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + "</a>" +
-
-                     //"</td><td width=\"20px\"></td><td align=\"right\">"+
+                     
                      "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-
                      "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
                      "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
-
-                     //"</td></tr><tr>" +
-
+                     
                      "<div id=\"" + nameId + "\"; class=\"SrbBlock\"; style=\"display:" + display + "\">" +
                      GetHtmlByName(false, dr["NAME"].ToString(), s, cnt) +
                      "</div>";
-
-                //"</tr>";
 
                 if (numId < cnt)
                     t += "<HR>";
 
                 numId++;
             }
-            //t += "</table>";
 
             byte[] bytes = Encoding.UTF8.GetBytes(t);
             String finalString = String.Empty;
@@ -200,30 +191,6 @@ namespace SRWords
                 }
             }
 
-            /*
-            //if (this.srbBS.Current != null)
-            //{
-            //int pos = this.srbBS.Find("NAME", Utils.CyrToLat(wName));
-            int pos = this.srbDataView.Find(Utils.CyrToLat(wName));
-            if (pos > -1)
-                {
-                //DataRowView dr = (DataRowView)this.srbBS.List[pos];
-                    DataRow dr = (DataRow)this.srbDataView.Table.Rows[pos];
-                if (dr != null && dr["XML"] != DBNull.Value)
-                    {
-#if DEMO
-                    // так как поле XML имеет тип BLOB
-                    byte[] bytesXml = (byte[])dr["XML"];
-                    Encoding dstEncodingFormat = Encoding.GetEncoding("utf-8");
-                    xmlString = dstEncodingFormat.GetString(bytesXml);
-#else
-                        xmlString = dr["XML"].ToString();
-#endif
-                    }
-                }
-            //}
-            */
-
             if (xmlString.Length > 0)
             {
 #if SQLITE
@@ -236,7 +203,10 @@ namespace SRWords
                 a = a.Deserialize(xmlString);
 #endif
                 // Сформировать HTML-скрипт: не создавать ссылки
-                return a.CreateScript(false, Setup_SrbAlphabet, Setup_RusAccent, rusKey);
+                //return a.CreateScript(false, Setup_SrbAlphabet, Setup_RusAccent, rusKey);
+
+                // Сформировать HTML-скрипт: true=создавать ссылки
+                return a.CreateScript(true, Setup_SrbAlphabet, Setup_RusAccent, rusKey);
             }
 
             return "";

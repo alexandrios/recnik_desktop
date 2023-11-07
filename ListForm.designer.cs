@@ -670,7 +670,7 @@
             this._dictContextMenuStrip.OwnerItem = this._dictToolStripSplitButton;
             this._dictContextMenuStrip.ShowCheckMargin = true;
             this._dictContextMenuStrip.ShowImageMargin = false;
-            this._dictContextMenuStrip.Size = new System.Drawing.Size(61, 4);
+            this._dictContextMenuStrip.Size = new System.Drawing.Size(181, 26);
             this._dictContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._dictContextMenuStrip_Opening);
             // 
             // _mainMenuStrip

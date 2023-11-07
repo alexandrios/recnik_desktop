@@ -17,7 +17,8 @@
     <UpgradeBackupLocation />
     <StartupObject>
     </StartupObject>
-    <ApplicationIcon>ico32.ico</ApplicationIcon>
+    <ApplicationIcon>logoSrbRus.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,7 +31,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -255,6 +255,7 @@
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\ic_logo.xml" />
     <None Include="Resources\logoSrbRus.png" />
+    <Content Include="logoSrbRus.ico" />
     <Content Include="Resources\крестик.png" />
   </ItemGroup>
   <ItemGroup>
