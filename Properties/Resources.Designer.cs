@@ -63,6 +63,16 @@ namespace SRWords.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6732719_arrow_back_down_left_right_icon {
+            get {
+                object obj = ResourceManager.GetObject("_6732719_arrow_back_down_left_right_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backs {
             get {
                 object obj = ResourceManager.GetObject("backs", resourceCulture);
@@ -86,6 +96,16 @@ namespace SRWords.Properties {
         internal static System.Drawing.Bitmap books2 {
             get {
                 object obj = ResourceManager.GetObject("books2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap go_by_ref {
+            get {
+                object obj = ResourceManager.GetObject("go_by_ref", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

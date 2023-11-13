@@ -112,8 +112,11 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this._wbRusShowAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._wbRusHideAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._demoLabel = new System.Windows.Forms.Label();
-            this._demoLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this._rusLabel = new System.Windows.Forms.Label();
+            this._srbLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -132,6 +135,9 @@
             this._mainMenuStrip.SuspendLayout();
             this._notifyContextMenuStrip.SuspendLayout();
             this._wbRusContextMenuStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // _wordsDataGridView
@@ -176,7 +182,7 @@
             this._wordsDataGridView.ShowCellToolTips = false;
             this._wordsDataGridView.ShowEditingIcon = false;
             this._wordsDataGridView.ShowRowErrors = false;
-            this._wordsDataGridView.Size = new System.Drawing.Size(152, 266);
+            this._wordsDataGridView.Size = new System.Drawing.Size(152, 335);
             this._wordsDataGridView.TabIndex = 0;
             this._wordsDataGridView.TabStop = false;
             this._wordsDataGridView.Enter += new System.EventHandler(this._wordsDataGridView_Enter);
@@ -318,7 +324,7 @@
             this._splitContainer.Panel2.BackColor = System.Drawing.Color.Transparent;
             this._splitContainer.Panel2.Controls.Add(this._webBrowser);
             this._splitContainer.Panel2MinSize = 130;
-            this._splitContainer.Size = new System.Drawing.Size(392, 297);
+            this._splitContainer.Size = new System.Drawing.Size(548, 366);
             this._splitContainer.SplitterDistance = 156;
             this._splitContainer.SplitterWidth = 2;
             this._splitContainer.TabIndex = 1;
@@ -330,7 +336,7 @@
             this._panelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._panelTextBox.Controls.Add(this._searchTextBox);
             this._panelTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this._panelTextBox.Location = new System.Drawing.Point(0, 267);
+            this._panelTextBox.Location = new System.Drawing.Point(0, 336);
             this._panelTextBox.Name = "_panelTextBox";
             this._panelTextBox.Padding = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this._panelTextBox.Size = new System.Drawing.Size(152, 26);
@@ -357,7 +363,7 @@
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
             this._panel.Name = "_panel";
-            this._panel.Size = new System.Drawing.Size(152, 293);
+            this._panel.Size = new System.Drawing.Size(152, 362);
             this._panel.TabIndex = 3;
             // 
             // _panelGrid
@@ -370,7 +376,7 @@
             this._panelGrid.Controls.Add(this._dictDataGridView);
             this._panelGrid.Location = new System.Drawing.Point(0, 0);
             this._panelGrid.Name = "_panelGrid";
-            this._panelGrid.Size = new System.Drawing.Size(152, 266);
+            this._panelGrid.Size = new System.Drawing.Size(152, 335);
             this._panelGrid.TabIndex = 2;
             // 
             // _rusDataGridView
@@ -409,7 +415,7 @@
             this._rusDataGridView.ShowCellErrors = false;
             this._rusDataGridView.ShowEditingIcon = false;
             this._rusDataGridView.ShowRowErrors = false;
-            this._rusDataGridView.Size = new System.Drawing.Size(152, 266);
+            this._rusDataGridView.Size = new System.Drawing.Size(152, 335);
             this._rusDataGridView.TabIndex = 0;
             this._rusDataGridView.TabStop = false;
             this._rusDataGridView.Visible = false;
@@ -466,7 +472,7 @@
             this._dictDataGridView.ShowCellToolTips = false;
             this._dictDataGridView.ShowEditingIcon = false;
             this._dictDataGridView.ShowRowErrors = false;
-            this._dictDataGridView.Size = new System.Drawing.Size(152, 266);
+            this._dictDataGridView.Size = new System.Drawing.Size(152, 335);
             this._dictDataGridView.TabIndex = 0;
             this._dictDataGridView.TabStop = false;
             this._dictDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._wordsDataGridView_CellFormatting);
@@ -493,7 +499,7 @@
             this._webBrowser.Location = new System.Drawing.Point(0, 0);
             this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this._webBrowser.Name = "_webBrowser";
-            this._webBrowser.Size = new System.Drawing.Size(230, 293);
+            this._webBrowser.Size = new System.Drawing.Size(386, 362);
             this._webBrowser.TabIndex = 0;
             this._webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this._webBrowser_Navigated);
             this._webBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this._webBrowser_Navigating);
@@ -608,12 +614,12 @@
             this.toolStripSeparator1,
             this._searchByLetterToolStripButton,
             this._dictToolStripSplitButton});
-            this._toolStrip.Location = new System.Drawing.Point(0, 323);
+            this._toolStrip.Location = new System.Drawing.Point(0, 392);
             this._toolStrip.Name = "_toolStrip";
             this._toolStrip.Padding = new System.Windows.Forms.Padding(0);
             this._toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this._toolStrip.ShowItemToolTips = false;
-            this._toolStrip.Size = new System.Drawing.Size(392, 50);
+            this._toolStrip.Size = new System.Drawing.Size(548, 50);
             this._toolStrip.TabIndex = 2;
             // 
             // _setupToolStripButton
@@ -670,7 +676,7 @@
             this._dictContextMenuStrip.OwnerItem = this._dictToolStripSplitButton;
             this._dictContextMenuStrip.ShowCheckMargin = true;
             this._dictContextMenuStrip.ShowImageMargin = false;
-            this._dictContextMenuStrip.Size = new System.Drawing.Size(181, 26);
+            this._dictContextMenuStrip.Size = new System.Drawing.Size(61, 4);
             this._dictContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._dictContextMenuStrip_Opening);
             // 
             // _mainMenuStrip
@@ -682,7 +688,7 @@
             this.helpToolStripMenuItem});
             this._mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this._mainMenuStrip.Name = "_mainMenuStrip";
-            this._mainMenuStrip.Size = new System.Drawing.Size(392, 24);
+            this._mainMenuStrip.Size = new System.Drawing.Size(548, 24);
             this._mainMenuStrip.TabIndex = 0;
             this._mainMenuStrip.MenuActivate += new System.EventHandler(this._mainMenuStrip_MenuActivate);
             // 
@@ -880,7 +886,6 @@
             this.rus10ToolStripMenuItem.Name = "rus10ToolStripMenuItem";
             this.rus10ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.rus10ToolStripMenuItem.Text = "rus10";
-            this.rus10ToolStripMenuItem.Visible = false;
             this.rus10ToolStripMenuItem.Click += new System.EventHandler(this.rus10ToolStripMenuItem_Click);
             // 
             // _notifyContextMenuStrip
@@ -951,46 +956,61 @@
             this._wbRusHideAllToolStripMenuItem.Text = "Скрыть все";
             this._wbRusHideAllToolStripMenuItem.Click += new System.EventHandler(this.wbHideAllToolStripMenuItem_Click);
             // 
-            // _demoLabel
+            // panel1
             // 
-            this._demoLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._demoLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._demoLabel.Image = ((System.Drawing.Image)(resources.GetObject("_demoLabel.Image")));
-            this._demoLabel.Location = new System.Drawing.Point(130, 323);
-            this._demoLabel.Name = "_demoLabel";
-            this._demoLabel.Size = new System.Drawing.Size(97, 29);
-            this._demoLabel.TabIndex = 3;
-            this._demoLabel.Text = "Заказ полной\r\nверсии словаря:";
-            this._demoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this._demoLabel.Visible = false;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this._rusLabel);
+            this.panel1.Controls.Add(this._srbLabel);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(137, 394);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(245, 48);
+            this.panel1.TabIndex = 6;
             // 
-            // _demoLinkLabel
+            // _rusLabel
             // 
-            this._demoLinkLabel.ActiveLinkColor = System.Drawing.Color.Black;
-            this._demoLinkLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._demoLinkLabel.DisabledLinkColor = System.Drawing.Color.Black;
-            this._demoLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._demoLinkLabel.Image = ((System.Drawing.Image)(resources.GetObject("_demoLinkLabel.Image")));
-            this._demoLinkLabel.LinkColor = System.Drawing.Color.Black;
-            this._demoLinkLabel.Location = new System.Drawing.Point(130, 354);
-            this._demoLinkLabel.Name = "_demoLinkLabel";
-            this._demoLinkLabel.Size = new System.Drawing.Size(97, 15);
-            this._demoLinkLabel.TabIndex = 4;
-            this._demoLinkLabel.TabStop = true;
-            this._demoLinkLabel.Text = "alex27@mail.ru";
-            this._demoLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this._demoLinkLabel.Visible = false;
-            this._demoLinkLabel.VisitedLinkColor = System.Drawing.Color.Black;
-            this._demoLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this._demoLinkLabel_LinkClicked);
+            this._rusLabel.AutoSize = true;
+            this._rusLabel.Location = new System.Drawing.Point(156, 26);
+            this._rusLabel.Name = "_rusLabel";
+            this._rusLabel.Size = new System.Drawing.Size(49, 13);
+            this._rusLabel.TabIndex = 2;
+            this._rusLabel.Text = "Русский";
+            this._rusLabel.Click += new System.EventHandler(this._rusLabel_Click);
+            // 
+            // _srbLabel
+            // 
+            this._srbLabel.AutoSize = true;
+            this._srbLabel.Location = new System.Drawing.Point(20, 26);
+            this._srbLabel.Name = "_srbLabel";
+            this._srbLabel.Size = new System.Drawing.Size(56, 13);
+            this._srbLabel.TabIndex = 1;
+            this._srbLabel.Text = "Сербский";
+            this._srbLabel.Click += new System.EventHandler(this._srbLabel_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(100, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(392, 373);
-            this.Controls.Add(this._demoLinkLabel);
-            this.Controls.Add(this._demoLabel);
+            this.ClientSize = new System.Drawing.Size(548, 442);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this._mainMenuStrip);
             this.Controls.Add(this._toolStrip);
             this.Controls.Add(this._splitContainer);
@@ -1030,6 +1050,10 @@
             this._mainMenuStrip.PerformLayout();
             this._notifyContextMenuStrip.ResumeLayout(false);
             this._wbRusContextMenuStrip.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,8 +1132,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem _wbRusShowAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _wbRusHideAllToolStripMenuItem;
-        private System.Windows.Forms.Label _demoLabel;
-        private System.Windows.Forms.LinkLabel _demoLinkLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         public System.Windows.Forms.ToolStripMenuItem mainFindByLetterToolStripMenuItem;
@@ -1119,5 +1141,10 @@
         private System.Windows.Forms.Panel _panelGrid;
         private System.Windows.Forms.Panel _panel;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label _rusLabel;
+        private System.Windows.Forms.Label _srbLabel;
     }
 }

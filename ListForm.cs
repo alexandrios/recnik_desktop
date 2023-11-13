@@ -730,6 +730,23 @@ namespace SRWords
                 //currWord = new WordPack(dr, currTableName == "rus" ? Language.RUSSIAN : Language.SERBIAN, _srbBindingSource);
                 currWord = new WordPack(dr, currTableName == "rus" ? Language.RUSSIAN : Language.SERBIAN, 
                     _srbBindingSource.DataSource as DataView, Setup_SrbAlphabet, Setup_RusAccent);
+
+                // для организации hide/open all srb key words
+                if (currTableName == "rus")
+                {
+                    string srbname = dr["SRBNAME"].ToString();
+                    string[] aSrb = srbname.Split(new char[] { ';' });
+                    List<String> aList = new List<string>();
+                    for (int i = 0; i < aSrb.Length; i++)
+                    {
+                        string s = aSrb[i];
+                        if (aList.IndexOf(s) == -1)
+                            aList.Add(s);
+                    }
+                    aList.Sort();
+                    wbShowAllToolStripMenuItem.Tag = aList;
+                }
+
                 if (oldWords != null)
                     oldWords.SetWait(currWord.Name);
             }
@@ -2466,7 +2483,7 @@ namespace SRWords
                     if (element != null)
                     {
                         multiRusValuesOpened = true;
-                        if (element.InnerText == "#") // Если статья ещё не загружена
+                        if (element.InnerText == "~") // Если статья ещё не загружена
                         {
                             // Загрузить статью
                             DataRowView dr = (DataRowView)_rusBindingSource.Current;
@@ -2489,9 +2506,9 @@ namespace SRWords
 
         private void wbHideAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            object obj = wbShowAllToolStripMenuItem.Tag;
-            if (obj == null)
-                return;
+           object obj = wbShowAllToolStripMenuItem.Tag;
+           if (obj == null)
+               return;
 
             List<String> aList = obj as List<string>;
             if (aList == null)
@@ -2511,10 +2528,12 @@ namespace SRWords
             }
         }
 
+        /*
         private void _demoLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("Mailto:alex27@mail.ru"); 
         }
+        */
 
         private void GetCurrAlpabet(out string rus_srb, out string cyr_lat)
         {
@@ -2617,7 +2636,7 @@ namespace SRWords
                 if (info.Count > 0)
                 {
                     Debug.WriteLine("Начинаем применять изменения, полученные с сервера");
-                    ScanWord.DBService.MakeChangesFromServer(info, new Repository());
+                    ScanWord.DBService.MakeChangesFromServer(info, new Repository2());
                 }
             }
             catch (Exception ex)
@@ -2637,7 +2656,7 @@ namespace SRWords
             string parameters = String.Format("change_id={0}", change_id.ToString());
             ScanWord.Rest rest = new ScanWord.Rest();
             Debug.WriteLine("Обращение к серверу за списком изменений...");
-            List<ScanWord.ChangeInfo> info = rest.TakeNChanges(parameters);
+            List<ScanWord.ChangeInfo> info = rest.TakeNChangesStress(parameters);
             return info;
         }
 
@@ -2645,6 +2664,7 @@ namespace SRWords
         // Таблицу планируется использовать в новой версии мобильного приложения
         private void rus10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             DataView dataViewCyr = new DataView();
             int k = 1000;
             int i = 1;
@@ -2673,6 +2693,7 @@ namespace SRWords
             }
 
             File.WriteAllText("rusrefs.txt", result);
+            */
         }
 
         private void gridAOWToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2787,6 +2808,16 @@ namespace SRWords
             int oldHeight = _panelTextBox.Height;
             _panelTextBox.Size = new Size(_panelTextBox.Width, _searchTextBox.Height + 8);
             _panelGrid.Height += (oldHeight - _panelTextBox.Height);
+        }
+
+        private void _srbLabel_Click(object sender, EventArgs e)
+        {
+            baseItem_Click(null, null);
+        }
+
+        private void _rusLabel_Click(object sender, EventArgs e)
+        {
+            rusItem_Click(null, null);
         }
     }
 }

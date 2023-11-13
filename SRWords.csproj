@@ -89,6 +89,7 @@
     <Compile Include="Css.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\DBChanges\Repository.cs" />
+    <Compile Include="Data\DBChanges\Repository2.cs" />
     <Compile Include="InitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +257,8 @@
     <None Include="Resources\ic_logo.xml" />
     <None Include="Resources\logoSrbRus.png" />
     <Content Include="logoSrbRus.ico" />
+    <None Include="Resources\6732719_arrow_back_down_left_right_icon.png" />
+    <None Include="Resources\50794_arrows_left_next_prev_right_icon.png" />
     <Content Include="Resources\крестик.png" />
   </ItemGroup>
   <ItemGroup>

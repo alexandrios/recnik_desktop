@@ -101,6 +101,9 @@ namespace SRWords
 
         private void GetRusWord(DataRowView dr)
         {
+            //string img = "gobyref.png";
+            string img = "search_icon.png";
+
             this.ReverseWord = dr["SRBNAME"].ToString();
             string srbname = this.ReverseWord;
             string[] aSrb = srbname.Split(new char[] { ';' });
@@ -130,10 +133,16 @@ namespace SRWords
                      "onclick=\"viewdiv('" + nameId + "'); return true;\">" +
                      (Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + "</a>" +
                      
+                    // "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    // "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
+                    // "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
+
                      "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                     "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
-                     "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
-                     
+                     "<a href='~" + nameId + "'><img src=\"" + Utils.GetWorkDirectory() + img + "\"" +
+                     //" alt=\"Найти слово в сербско-русском словаре\" border=\"0\" width=\"12\" height=\"12\"></a>" +
+                     " border=\"0\" width=\"12\" height=\"12\"></a>" +
+
+
                      "<div id=\"" + nameId + "\"; class=\"SrbBlock\"; style=\"display:" + display + "\">" +
                      GetHtmlByName(false, dr["NAME"].ToString(), s, cnt) +
                      "</div>";
