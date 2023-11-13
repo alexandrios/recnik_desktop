@@ -214,13 +214,6 @@
             this._gridContextMenuStrip.Size = new System.Drawing.Size(353, 148);
             this._gridContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._gridContextMenuStrip_Opening);
             // 
-            // gridAOWToolStripMenuItem
-            // 
-            this.gridAOWToolStripMenuItem.Name = "gridAOWToolStripMenuItem";
-            this.gridAOWToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
-            this.gridAOWToolStripMenuItem.Text = "Адрес слова";
-            this.gridAOWToolStripMenuItem.Click += new System.EventHandler(this.gridAOWToolStripMenuItem_Click);
-            // 
             // gridAOWToolStripSeparator
             // 
             this.gridAOWToolStripSeparator.Name = "gridAOWToolStripSeparator";
@@ -880,13 +873,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.aboutToolStripMenuItem.Text = "&О программе";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // rus10ToolStripMenuItem
-            // 
-            this.rus10ToolStripMenuItem.Name = "rus10ToolStripMenuItem";
-            this.rus10ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.rus10ToolStripMenuItem.Text = "rus10";
-            this.rus10ToolStripMenuItem.Click += new System.EventHandler(this.rus10ToolStripMenuItem_Click);
             // 
             // _notifyContextMenuStrip
             // 

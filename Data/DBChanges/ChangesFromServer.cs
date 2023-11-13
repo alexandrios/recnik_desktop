@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Diagnostics;
+
+namespace SRWords
+{
+    public static class ChangesFromServer
+    {
+        /// <summary>
+        /// Получить изменения БД с сервера и выполнить их.
+        /// </summary>
+        public static void GetChangesFromServer()
+        {
+            try
+            {
+                List<ScanWord.ChangeInfo> info = GetChangesList();
+                Debug.WriteLine("Получены изменения с сервера: " + info.Count.ToString());
+
+                if (info.Count > 0)
+                {
+                    Debug.WriteLine("Начинаем применять изменения, полученные с сервера");
+                    ScanWord.DBService.MakeChangesFromServer(info, new Repository2());
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: проверять, есть ли интернет
+                Debug.WriteLine(ex.StackTrace);
+            }
+        }
+
+        /// <summary>
+        /// Получить изменения БД с сервера.
+        /// </summary>
+        static private List<ScanWord.ChangeInfo> GetChangesList()
+        {
+            int change_id = Data.GetChangeId();
+            Debug.WriteLine("Текущий код синхронизации = " + change_id.ToString());
+            string parameters = String.Format("change_id={0}", change_id.ToString());
+            ScanWord.Rest rest = new ScanWord.Rest();
+            Debug.WriteLine("Обращение к серверу за списком изменений...");
+            List<ScanWord.ChangeInfo> info = rest.TakeNChangesStress(parameters);
+            return info;
+        }
+    }
+}

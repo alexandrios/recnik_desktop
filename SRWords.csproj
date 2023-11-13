@@ -88,8 +88,10 @@
     <Compile Include="Articles\WordInfo.cs" />
     <Compile Include="Css.cs" />
     <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\DBChanges\ChangesFromServer.cs" />
     <Compile Include="Data\DBChanges\Repository.cs" />
     <Compile Include="Data\DBChanges\Repository2.cs" />
+    <Compile Include="Garbage.cs" />
     <Compile Include="InitForm.cs">
       <SubType>Form</SubType>
     </Compile>
