@@ -196,5 +196,18 @@ namespace SRWords
             ADSData.RunCommand(cmd);
 #endif
         }
+
+        int IRepository.IsExistsRusRef(RusRef rusRef)
+        {
+           return 0;
+        }
+
+        void IRepository.InsertRusRef(RusRef rusRef)
+        {
+        }
+
+        void IRepository.DeleteRusRef(RusRef rusRef)
+        {
+        }
     }
 }

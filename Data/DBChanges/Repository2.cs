@@ -71,6 +71,29 @@ namespace SRWords
             ADSData.RunCommand(cmd);
         }
 
+        public int IsExistsRusRef(RusRef rusRef)
+        {
+            Int64 result = ADSData.RunCommandScalarInt("select count(*) cnt from rusref where name='" + rusRef.name + "' and stress='" + rusRef.stress + "' and srbname='" + rusRef.srbname + "'");
+
+            if (result == 1)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
+        public void InsertRusRef(RusRef rusRef)
+        {
+            string cmd = "insert into rusref (name, stress, srbname, kw) values ('" + rusRef.name + "', '" + rusRef.stress + "', '" + rusRef.srbname + "', '" + rusRef.kw + "')";
+            ADSData.RunCommand(cmd);
+        }
+
+        public void DeleteRusRef(RusRef rusRef)
+        {
+            string cmd = "delete from rusref where name='" + rusRef.name + "' and stress='" + rusRef.stress + "' and srbname='" + rusRef.srbname + "'";
+            ADSData.RunCommand(cmd);
+        }
+
         public void StartTransaction()
         {
             ADSData.StartTransaction();
