@@ -443,7 +443,12 @@ namespace SRWords
                 // Загрузить словарь
                 LoadData(currTableName, currDictId, false);
 
-                int pos = CurrentBS().Find("NAME", currWord.Name);
+                int pos;
+                //if (Setup_SrbAlphabet == "cyr")
+                //    pos = CurrentBS().Find("NAME_CYR", Utils.LatToCyr(currWord.Name));
+                //else
+                    pos = CurrentBS().Find("NAME", currWord.Name);
+
                 if (pos > -1)
                     CurrentBS().Position = pos;
 
@@ -461,10 +466,10 @@ namespace SRWords
 
                 // Окно виртуальной клавиатуры изменится само, по таймеру
             }
-            else
-            {
+            //else
+            //{
                 ShowCurrentWord();
-            }
+            //}
         }
 
         /// <summary>
@@ -727,9 +732,8 @@ namespace SRWords
 
             if (dr != null)
             {
-                //currWord = new WordPack(dr, currTableName == "rus" ? Language.RUSSIAN : Language.SERBIAN, _srbBindingSource);
-                currWord = new WordPack(dr, currTableName == "rus" ? Language.RUSSIAN : Language.SERBIAN, 
-                    _srbBindingSource.DataSource as DataView, Setup_SrbAlphabet, Setup_RusAccent);
+                currWord = new WordPack(dr, currTableName == "rus" ? Language.RUSSIAN : Language.SERBIAN,
+                    dataViewSrbLat, Setup_SrbAlphabet, Setup_RusAccent);
 
                 // для организации hide/open all srb key words
                 if (currTableName == "rus")
@@ -1904,7 +1908,7 @@ namespace SRWords
             item.ShortcutKeys = Keys.S | Keys.Control;
             _dictContextMenuStrip.Items.Add(item);
 
-            item = new ToolStripMenuItem("Обратный русско-сербский словарь");
+            item = new ToolStripMenuItem("Русско-сербский словарь");
             item.Click += new EventHandler(rusItem_Click);
             item.ShortcutKeys = Keys.R | Keys.Control;
             _dictContextMenuStrip.Items.Add(item);
@@ -1985,7 +1989,7 @@ namespace SRWords
             item.ShortcutKeys = Keys.S | Keys.Control;
             dictToolStripMenuItem.DropDownItems.Add(item);
 
-            item = new ToolStripMenuItem("Обратный русско-сербский словарь");
+            item = new ToolStripMenuItem("Русско-сербский словарь");
             item.Click += new EventHandler(rusItem_Click);
             item.ShortcutKeys = Keys.R | Keys.Control;
             dictToolStripMenuItem.DropDownItems.Add(item);
@@ -2028,6 +2032,9 @@ namespace SRWords
 
             // Разрешить поиск по буквам
             EnableSyllableForm();
+
+            _langLeftLabel.Text = "Сербский";
+            _langRightLabel.Text = "Русский";
         }
 
         void rusItem_Click(object sender, EventArgs e)
@@ -2043,6 +2050,9 @@ namespace SRWords
             LoadData("rus", 0);
 
             DisableSyllableForm();
+
+            _langLeftLabel.Text = "Русский";
+            _langRightLabel.Text = "Сербский";
         }
 
         void dictItem_Click(object sender, EventArgs e)
@@ -2165,7 +2175,6 @@ namespace SRWords
         private void _rusBindingSource_PositionChanged(object sender, EventArgs e)
         {
             ShowCurrentWord();
-            //ShowCurrentRusWord((DataRowView)_rusBindingSource.Current);
         }
 
         /*
@@ -2605,14 +2614,28 @@ namespace SRWords
             _panelGrid.Height += (oldHeight - _panelTextBox.Height);
         }
 
-        private void _srbLabel_Click(object sender, EventArgs e)
+        private void _switchPictureBox_Click(object sender, EventArgs e)
         {
-            baseItem_Click(null, null);
+            SwitchLanguage();
         }
 
-        private void _rusLabel_Click(object sender, EventArgs e)
+
+        private void SwitchLanguage()
         {
-            rusItem_Click(null, null);
+            if (currTableName == "words")
+            {
+                rusItem_Click(null, null);
+                //_langLeftLabel.Text = "Русский";
+                //_langRightLabel.Text = "Сербский";
+            }
+            else
+            {
+                baseItem_Click(null, null);
+                //_langLeftLabel.Text = "Сербский";
+                //_langRightLabel.Text = "Русский";
+            }
+
+            CurrentDGV().Focus();
         }
     }
 }

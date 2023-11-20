@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyboardForm));
             this._panel = new System.Windows.Forms.Panel();
             this._timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // _panel
             // 
-            this._panel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_panel.BackgroundImage")));
+            this._panel.BackColor = System.Drawing.Color.Transparent;
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
             this._panel.Name = "_panel";
@@ -64,8 +63,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "  Клавиатура";
-            this.Load += new System.EventHandler(this.KeyboardForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KeyboardForm_FormClosing);
+            this.Load += new System.EventHandler(this.KeyboardForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyboardForm_KeyDown);
             this.ResumeLayout(false);
 

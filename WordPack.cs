@@ -8,7 +8,6 @@ using SRWords.Articles;
 
 namespace SRWords
 {
-
     public enum Language
     { 
         SERBIAN,
@@ -38,10 +37,9 @@ namespace SRWords
             this.Lang = lang;
             this.Name = dr["NAME"].ToString();
 
+            // srbDataView - это всегда dataViewSrbLat. Sort='NAME'. Искать всегда на латинице
             this.srbDataView = srbDataView;
-            //if (this.srbDataView != null)
-            //    this.srbDataView.Sort = "NAME";
-
+            
             this.Setup_SrbAlphabet = setup_SrbAlphabet;
             this.Setup_RusAccent = setup_RusAccent;
 
@@ -221,7 +219,6 @@ namespace SRWords
             return "";
         }
 
-
         private string HTMLStartString()
         {
             return "<HTML><HEAD>" +
@@ -249,7 +246,8 @@ namespace SRWords
                     "}}" +
                     "</script>" + Environment.NewLine +
 
-                   "</HEAD><BODY style=\"background-color:#f4f4f4;\">" + Environment.NewLine;
+                   //"</HEAD><BODY style=\"background-color:#f4f4f4;\">" + Environment.NewLine;
+                   "</HEAD><BODY style=\"background-color:#ffffff;\">" + Environment.NewLine;
         }
     }
 }

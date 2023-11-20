@@ -28,14 +28,12 @@ namespace SRWords
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SyllableForm));
             this._panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // _panel
             // 
             this._panel.BackColor = System.Drawing.Color.Transparent;
-            this._panel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_panel.BackgroundImage")));
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
             this._panel.Name = "_panel";
@@ -59,8 +57,8 @@ namespace SRWords
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Поиск по буквам";
-            this.Load += new System.EventHandler(this.SyllableForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SyllableForm_FormClosing);
+            this.Load += new System.EventHandler(this.SyllableForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SyllableForm_KeyDown);
             this.ResumeLayout(false);
 

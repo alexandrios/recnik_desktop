@@ -30,12 +30,13 @@ namespace SRWords
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetupForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._tabControl = new System.Windows.Forms.TabControl();
             this._mainTabPage = new System.Windows.Forms.TabPage();
             this.confirmCloseGroupBox = new System.Windows.Forms.GroupBox();
+            this._loadRusWhileStartCheckBox = new System.Windows.Forms.CheckBox();
             this._confirmCloseCheckBox = new System.Windows.Forms.CheckBox();
             this.historyGroupBox = new System.Windows.Forms.GroupBox();
             this._labelDelay2 = new System.Windows.Forms.Label();
@@ -129,7 +130,6 @@ namespace SRWords
             this._fontDialog = new System.Windows.Forms.FontDialog();
             this._colorDialog = new System.Windows.Forms.ColorDialog();
             this._dictMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this._loadRusWhileStartCheckBox = new System.Windows.Forms.CheckBox();
             this._tabControl.SuspendLayout();
             this._mainTabPage.SuspendLayout();
             this.confirmCloseGroupBox.SuspendLayout();
@@ -160,7 +160,7 @@ namespace SRWords
             this._tabControl.Location = new System.Drawing.Point(0, 0);
             this._tabControl.Name = "_tabControl";
             this._tabControl.SelectedIndex = 0;
-            this._tabControl.Size = new System.Drawing.Size(494, 386);
+            this._tabControl.Size = new System.Drawing.Size(484, 386);
             this._tabControl.TabIndex = 0;
             this._tabControl.SelectedIndexChanged += new System.EventHandler(this._tabControl_SelectedIndexChanged);
             this._tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this._tabControl_Selecting);
@@ -175,7 +175,7 @@ namespace SRWords
             this._mainTabPage.Location = new System.Drawing.Point(4, 22);
             this._mainTabPage.Name = "_mainTabPage";
             this._mainTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._mainTabPage.Size = new System.Drawing.Size(486, 360);
+            this._mainTabPage.Size = new System.Drawing.Size(476, 360);
             this._mainTabPage.TabIndex = 1;
             this._mainTabPage.Text = "Основные";
             this._mainTabPage.UseVisualStyleBackColor = true;
@@ -189,6 +189,16 @@ namespace SRWords
             this.confirmCloseGroupBox.Size = new System.Drawing.Size(480, 92);
             this.confirmCloseGroupBox.TabIndex = 3;
             this.confirmCloseGroupBox.TabStop = false;
+            // 
+            // _loadRusWhileStartCheckBox
+            // 
+            this._loadRusWhileStartCheckBox.AutoSize = true;
+            this._loadRusWhileStartCheckBox.Location = new System.Drawing.Point(11, 19);
+            this._loadRusWhileStartCheckBox.Name = "_loadRusWhileStartCheckBox";
+            this._loadRusWhileStartCheckBox.Size = new System.Drawing.Size(444, 17);
+            this._loadRusWhileStartCheckBox.TabIndex = 0;
+            this._loadRusWhileStartCheckBox.Text = "Загружать русский словарь при старте  программы (а не при первом обращении)";
+            this._loadRusWhileStartCheckBox.UseVisualStyleBackColor = true;
             // 
             // _confirmCloseCheckBox
             // 
@@ -399,7 +409,7 @@ namespace SRWords
             this.cyrlatGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.cyrlatGroupBox.Location = new System.Drawing.Point(3, 3);
             this.cyrlatGroupBox.Name = "cyrlatGroupBox";
-            this.cyrlatGroupBox.Size = new System.Drawing.Size(480, 50);
+            this.cyrlatGroupBox.Size = new System.Drawing.Size(470, 50);
             this.cyrlatGroupBox.TabIndex = 0;
             this.cyrlatGroupBox.TabStop = false;
             this.cyrlatGroupBox.Text = "Сербский алфавит";
@@ -1162,14 +1172,14 @@ namespace SRWords
             this._dictDataGridView.AllowUserToResizeRows = false;
             this._dictDataGridView.AutoGenerateColumns = false;
             this._dictDataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._dictDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._dictDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._dictDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dictDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -1177,14 +1187,14 @@ namespace SRWords
             this.BGR,
             this.CNT});
             this._dictDataGridView.DataSource = this._dictBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this._dictDataGridView.Location = new System.Drawing.Point(0, 3);
             this._dictDataGridView.MultiSelect = false;
             this._dictDataGridView.Name = "_dictDataGridView";
@@ -1227,10 +1237,10 @@ namespace SRWords
             // 
             this.CNT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CNT.DataPropertyName = "CNT";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.CNT.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.CNT.DefaultCellStyle = dataGridViewCellStyle2;
             this.CNT.HeaderText = "Количество слов";
             this.CNT.Name = "CNT";
             this.CNT.ReadOnly = true;
@@ -1290,23 +1300,12 @@ namespace SRWords
             this._dictMenuStrip.Name = "_dictMenuStrip";
             this._dictMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
-            // _loadRusWhileStartCheckBox
-            // 
-            this._loadRusWhileStartCheckBox.AutoSize = true;
-            this._loadRusWhileStartCheckBox.Location = new System.Drawing.Point(11, 19);
-            this._loadRusWhileStartCheckBox.Name = "_loadRusWhileStartCheckBox";
-            this._loadRusWhileStartCheckBox.Size = new System.Drawing.Size(444, 17);
-            this._loadRusWhileStartCheckBox.TabIndex = 0;
-            this._loadRusWhileStartCheckBox.Text = "Загружать русский словарь при старте  программы (а не при первом обращении)";
-            this._loadRusWhileStartCheckBox.UseVisualStyleBackColor = true;
-            // 
             // SetupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Moccasin;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(494, 422);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(484, 411);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.applyButton);

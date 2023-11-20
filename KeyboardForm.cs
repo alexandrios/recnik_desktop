@@ -91,8 +91,8 @@ namespace SRWords
             int MaxLetter;
             bool ReCreate = true; // panel.Controls.IndexOfKey("BUT0") == -1;
             bool vis = Visible;
+            Color normalBackColor = Color.White;
             Button B = null;
-            //TPosiz Posiz = TPosiz.pzTop;
  
             Visible = false;
 
@@ -126,8 +126,9 @@ namespace SRWords
                     B.Name = "BUT" + i.ToString();
                     B.Width = razmer;
                     B.Height = razmer;
-                    B.Font = normalFont;  
-                    B.Click += new EventHandler(B_Click);
+                    B.Font = normalFont;
+                    B.BackColor = normalBackColor;
+                    B.Click += new EventHandler(B_Click);   
                     _panel.Controls.Add(B);
                 }
                 else
@@ -179,73 +180,6 @@ namespace SRWords
                 }
             }
 
-            /*
-     // Кнопка "стереть символ"
-     with sbClear do
-     begin
-       if Posiz in [pzLeft, pzRight] then
-       begin
-         if l <> 1 then
-         begin
-           l = 1;
-           t = t + B.Height;
-         end;  
-       end else begin
-         t = 1;
-         l = 12 * B.Width + 1;
-       end;
-       Width = razmer;
-       Height = razmer;
-       Top = t;
-       Left = l;
-     end;
-
-     // Кнопка "Ввод"
-     with sbEnter do
-     begin
-       Width = razmer;
-       Height = razmer;
-       if Posiz in [pzLeft, pzRight] then
-       begin
-         l = l + B.Width;
-       end else begin
-         t = B.Height + 1;
-         l = (B.Width div 3) + 12 * B.Width + 1;
-       end;
-       Top = t;
-       Left = l;
-     end;
-
-     with cbAdd do
-     begin
-       if Posiz in [pzLeft, pzRight] then
-       begin
-         if l <> 1 then
-         begin
-           l = 1;
-           t = t + B.Height;
-         end;  
-       end else begin
-         t = 2*(B.Height + 1);
-         l = 12 * B.Width + 15;
-       end;
-       Top = t;
-       Left = l;
-     end;
-
-     if Posiz in [pzLeft, pzRight] then
-     begin
-       Width = 2*razmer + 4;
-       Height = ((MaxLetter div 2)+(MaxLetter mod 2))*razmer + sbEnter.Height + cbAdd.Height + sbHide.Height + 3;
-     end else begin
-       Width = 2*(B.Width div 3) + 13*B.Width + 2;
-       Height = 3 * B.Height + sbHide.Height + 3;
-     end;
-
-     sbHide.Left = Width - sbHide.Width;
-     sbClip.Left = Width - sbHide.Width - sbClip.Width - 1;
-   */
-
             // Установить ширину формы
             this.Width = 12 * (B.Width + 1) + B.Width / 3 - 4 - (_language == "rus" ? 9 : 0);
 
@@ -264,7 +198,8 @@ namespace SRWords
             B.Top = t;
             //B.Text = "<--";
             B.Text = "←";
-            B.Click +=new EventHandler(B_ClickBackspace);
+            B.BackColor = normalBackColor;
+            B.Click += new EventHandler(B_ClickBackspace);
             _panel.Controls.Add(B);
 
             Visible = vis;
