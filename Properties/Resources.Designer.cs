@@ -63,16 +63,6 @@ namespace SRWords.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6732719_arrow_back_down_left_right_icon {
-            get {
-                object obj = ResourceManager.GetObject("_6732719_arrow_back_down_left_right_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap backs {
             get {
                 object obj = ResourceManager.GetObject("backs", resourceCulture);
@@ -166,6 +156,46 @@ namespace SRWords.Properties {
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switch_0 {
+            get {
+                object obj = ResourceManager.GetObject("switch_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switch_135 {
+            get {
+                object obj = ResourceManager.GetObject("switch_135", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switch_45 {
+            get {
+                object obj = ResourceManager.GetObject("switch_45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switch_90 {
+            get {
+                object obj = ResourceManager.GetObject("switch_90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

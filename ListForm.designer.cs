@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             this._wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +78,8 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this._dictToolStripSplitButton = new System.Windows.Forms.ToolStripSplitButton();
             this._dictContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this._mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,11 +117,9 @@
             this._wbRusHideAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this._panelReverse = new System.Windows.Forms.Panel();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this._switchPictureBox = new System.Windows.Forms.PictureBox();
-            this._langLeftLabel = new System.Windows.Forms.Label();
             this._langRightLabel = new System.Windows.Forms.Label();
+            this._langLeftLabel = new System.Windows.Forms.Label();
+            this._switchPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -159,15 +159,15 @@
             this.NAME});
             this._wordsDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._wordsDataGridView.DataSource = this._srbBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this._wordsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._wordsDataGridView.EnableHeadersVisualStyles = false;
             this._wordsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -279,6 +279,7 @@
             this._oldContextMenuStrip.BackColor = System.Drawing.Color.White;
             this._oldContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._oldContextMenuStrip.Name = "oldContextMenuStrip";
+            this._oldContextMenuStrip.OwnerItem = this._backToolStripSplitButton;
             this._oldContextMenuStrip.ShowImageMargin = false;
             this._oldContextMenuStrip.Size = new System.Drawing.Size(36, 4);
             this._oldContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._oldContextMenuStrip_Opening);
@@ -395,15 +396,15 @@
             this.dataGridViewTextBoxColumn2});
             this._rusDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._rusDataGridView.DataSource = this._rusBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._rusDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._rusDataGridView.Location = new System.Drawing.Point(0, 0);
             this._rusDataGridView.MultiSelect = false;
@@ -451,15 +452,15 @@
             this.dataGridViewTextBoxColumn1});
             this._dictDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._dictDataGridView.DataSource = this._dictBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this._dictDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dictDataGridView.Location = new System.Drawing.Point(0, 0);
             this._dictDataGridView.MultiSelect = false;
@@ -682,10 +683,22 @@
             this._dictContextMenuStrip.BackColor = System.Drawing.Color.White;
             this._dictContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._dictContextMenuStrip.Name = "oldContextMenuStrip";
+            this._dictContextMenuStrip.OwnerItem = this._dictToolStripSplitButton;
             this._dictContextMenuStrip.ShowCheckMargin = true;
             this._dictContextMenuStrip.ShowImageMargin = false;
             this._dictContextMenuStrip.Size = new System.Drawing.Size(61, 4);
             this._dictContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._dictContextMenuStrip_Opening);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 50);
             // 
             // _mainMenuStrip
             // 
@@ -972,55 +985,48 @@
             this._panelReverse.Controls.Add(this._langRightLabel);
             this._panelReverse.Controls.Add(this._langLeftLabel);
             this._panelReverse.Controls.Add(this._switchPictureBox);
-            this._panelReverse.Location = new System.Drawing.Point(144, 401);
+            this._panelReverse.Location = new System.Drawing.Point(143, 401);
             this._panelReverse.Name = "_panelReverse";
-            this._panelReverse.Size = new System.Drawing.Size(168, 47);
+            this._panelReverse.Size = new System.Drawing.Size(170, 47);
             this._panelReverse.TabIndex = 6;
             // 
-            // toolStripSeparator8
+            // _langRightLabel
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 50);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 50);
-            // 
-            // _switchPictureBox
-            // 
-            this._switchPictureBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._switchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("_switchPictureBox.Image")));
-            this._switchPictureBox.Location = new System.Drawing.Point(63, 5);
-            this._switchPictureBox.Name = "_switchPictureBox";
-            this._switchPictureBox.Size = new System.Drawing.Size(36, 36);
-            this._switchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this._switchPictureBox.TabIndex = 0;
-            this._switchPictureBox.TabStop = false;
-            this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
+            this._langRightLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._langRightLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this._langRightLabel.ForeColor = System.Drawing.Color.Red;
+            this._langRightLabel.Location = new System.Drawing.Point(104, 5);
+            this._langRightLabel.Name = "_langRightLabel";
+            this._langRightLabel.Size = new System.Drawing.Size(65, 36);
+            this._langRightLabel.TabIndex = 2;
+            this._langRightLabel.Text = "Русский";
+            this._langRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._langRightLabel.Click += new System.EventHandler(this._switchPictureBox_Click);
             // 
             // _langLeftLabel
             // 
             this._langLeftLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._langLeftLabel.Location = new System.Drawing.Point(4, 5);
+            this._langLeftLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._langLeftLabel.ForeColor = System.Drawing.Color.Red;
+            this._langLeftLabel.Location = new System.Drawing.Point(2, 5);
             this._langLeftLabel.Name = "_langLeftLabel";
-            this._langLeftLabel.Size = new System.Drawing.Size(56, 36);
+            this._langLeftLabel.Size = new System.Drawing.Size(65, 36);
             this._langLeftLabel.TabIndex = 1;
             this._langLeftLabel.Text = "Сербский";
             this._langLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this._langLeftLabel.Click += new System.EventHandler(this._switchPictureBox_Click);
             // 
-            // _langRightLabel
+            // _switchPictureBox
             // 
-            this._langRightLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._langRightLabel.Location = new System.Drawing.Point(102, 5);
-            this._langRightLabel.Name = "_langRightLabel";
-            this._langRightLabel.Size = new System.Drawing.Size(63, 36);
-            this._langRightLabel.TabIndex = 2;
-            this._langRightLabel.Text = "Русский";
-            this._langRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._langRightLabel.Click += new System.EventHandler(this._switchPictureBox_Click);
+            this._switchPictureBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._switchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("_switchPictureBox.Image")));
+            this._switchPictureBox.Location = new System.Drawing.Point(69, 8);
+            this._switchPictureBox.Name = "_switchPictureBox";
+            this._switchPictureBox.Size = new System.Drawing.Size(32, 32);
+            this._switchPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._switchPictureBox.TabIndex = 0;
+            this._switchPictureBox.TabStop = false;
+            this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
             // 
             // ListForm
             // 

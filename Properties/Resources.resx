@@ -151,7 +151,16 @@
   <data name="go_by_ref" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\50794_arrows_left_next_prev_right_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_6732719_arrow_back_down_left_right_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6732719_arrow_back_down_left_right_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="switch_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switch_0.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="switch_90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switch_90.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="switch_135" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switch_135.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="switch_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switch_45.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

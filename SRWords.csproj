@@ -116,6 +116,11 @@
     <Compile Include="OldWords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,8 +150,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SetupForm.resx">
       <DependentUpon>SetupForm.cs</DependentUpon>
@@ -163,11 +168,6 @@
       <DependentUpon>SyllableForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +261,14 @@
     <Content Include="logoSrbRus.ico" />
     <None Include="Resources\6732719_arrow_back_down_left_right_icon.png" />
     <None Include="Resources\50794_arrows_left_next_prev_right_icon.png" />
+    <None Include="Resources\switch_0.bmp" />
+    <None Include="Resources\switch_0.png" />
+    <None Include="Resources\switch_90.png" />
+    <None Include="Resources\switch_45.png" />
+    <None Include="Resources\switch_135.png" />
+    <None Include="Resources\switch_9.png" />
+    <None Include="Resources\switch_455.png" />
+    <None Include="Resources\switch_1355.png" />
     <Content Include="Resources\крестик.png" />
   </ItemGroup>
   <ItemGroup>

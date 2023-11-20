@@ -1947,20 +1947,29 @@ namespace SRWords
 
         private void _dictToolStripSplitButton_ButtonClick(object sender, EventArgs e)
         {
-            if (currTableName == "words")
+            if (currTableName != "dict")
+            //if (currTableName == "words")
             {
                 if (currDictId != -1)
                 {
+                    if (oldWords != null && !oldWords.IsRus())
+                        if (!String.IsNullOrEmpty(currWord.Name))
+                            oldWords.Set(currWord.Name);
+                    /*
                     if (oldWords != null)
                     {
                         if (!String.IsNullOrEmpty(currWord.Name))
                             oldWords.Set(currWord.Name);
                     }
+                    */
 
                     CurrTableName = "dict";
                     LoadData("dict", currDictId);
 
                     DisableSyllableForm();
+
+                    _langLeftLabel.Text = "Сербский";
+                    _langRightLabel.Text = "Русский";
                 }
                 else
                 { 
@@ -2035,6 +2044,19 @@ namespace SRWords
 
             _langLeftLabel.Text = "Сербский";
             _langRightLabel.Text = "Русский";
+
+            int delay = 20;
+            _switchPictureBox.Image = Properties.Resources.switch_135 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_90 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_45 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_0 as Bitmap;
+            _panelReverse.Refresh();
         }
 
         void rusItem_Click(object sender, EventArgs e)
@@ -2053,6 +2075,20 @@ namespace SRWords
 
             _langLeftLabel.Text = "Русский";
             _langRightLabel.Text = "Сербский";
+
+            int delay = 20;
+            _switchPictureBox.Image = Properties.Resources.switch_45 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_90 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_135 as Bitmap;
+            _panelReverse.Refresh();
+            Thread.Sleep(delay);
+            _switchPictureBox.Image = Properties.Resources.switch_0 as Bitmap;
+            _panelReverse.Refresh();
+
         }
 
         void dictItem_Click(object sender, EventArgs e)
@@ -2071,6 +2107,9 @@ namespace SRWords
             LoadData("dict", idDict);
 
             DisableSyllableForm();
+
+            _langLeftLabel.Text = "Сербский";
+            _langRightLabel.Text = "Русский";
         }
 
         private void mainSaveToUserDictToolStripMenuItem_Click(object sender, EventArgs e)
