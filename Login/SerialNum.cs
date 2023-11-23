@@ -396,12 +396,17 @@ namespace SRWords
                 return OrphoGetting(konto);
         }
 
+        /// <summary>
+        /// Функция проверяет сравнивает сгенерированный ключ с ключом из бд. 
+        /// Проверка происходит при запуске приложения.
+        /// </summary>
+        /// <returns></returns>
         public static bool CompareKey()
         {
             string storedKey = ADSData.MdFiveGetKey();
             string computedKey = MakeKeyByLoginInfo(GetLoginHex(), DensityWeber(), false);
             return String.Equals(storedKey, computedKey);
         }
-        #endif
+#endif
     }
 }

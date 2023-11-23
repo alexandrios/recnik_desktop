@@ -31,6 +31,10 @@ namespace SRWords
 #if DEMO
             Application.Run(new ListForm(false));
 #else
+
+            //Application.Run(new InitForm());
+
+            
             bool isAdmin = false;
                 if (args.Length != 0)
                     isAdmin = (args[0].ToUpper() == "ADMIN");
@@ -44,6 +48,7 @@ namespace SRWords
                 {
                     Application.Run(new InitForm());
                 }
+            
 #endif
 #endif
             //GC.KeepAlive(mutex);

@@ -20,8 +20,8 @@ namespace SRWords
         public String Html;
         public String ReverseWord;
         public String TtsWord;
-        int HistoryId;
-        Boolean IsAtFavourites;
+        //int HistoryId;
+        //Boolean IsAtFavourites;
 
         private readonly string Setup_SrbAlphabet;
         private readonly string Setup_RusAccent;

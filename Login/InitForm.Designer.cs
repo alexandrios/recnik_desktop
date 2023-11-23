@@ -54,8 +54,8 @@ namespace SRWords
             // 
             // _panel
             // 
-            this._panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._panel.BackColor = System.Drawing.SystemColors.Control;
             this._panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._panel.Controls.Add(this._keyTextBox5);
@@ -172,8 +172,8 @@ namespace SRWords
             // 
             // _codeTextBox
             // 
-            this._codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._codeTextBox.Location = new System.Drawing.Point(171, 43);
             this._codeTextBox.Name = "_codeTextBox";
             this._codeTextBox.ReadOnly = true;

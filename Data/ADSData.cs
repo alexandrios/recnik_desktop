@@ -314,6 +314,10 @@ namespace SRWords
             }
         }
 
+        /// <summary>
+        /// Получить логин из бд.
+        /// </summary>
+        /// <returns></returns>
         public static string MdFiveGetLogin()
         {
             string cmd = "select count(*) cnt from valpost";
@@ -347,6 +351,10 @@ namespace SRWords
             return String.Empty;
         }
 
+        /// <summary>
+        /// Получить ключ из бд.
+        /// </summary>
+        /// <returns></returns>
         public static string MdFiveGetKey()
         {
             string result = String.Empty;
@@ -368,9 +376,12 @@ namespace SRWords
             return result;
         }
 
+        /// <summary>
+        /// Сохранить ключ в бд.
+        /// </summary>
+        /// <param name="key"></param>
         public static void MdFiveSetKey(string key)
         {
-            string result = String.Empty;
             string cmd = "select count(*) cnt from valpost";
             int? cnt = RunCommandScalar<int>(cmd);
             if (cnt != null && cnt == 0)

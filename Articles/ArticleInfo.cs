@@ -564,7 +564,7 @@ namespace SRWords.Articles
             long ctr1 = 0, ctr2 = 0, freq = 0;
             QueryPerformanceCounter(ref ctr1);
             */
-            const string YELLOW_BGR = "#fffbbb";
+            //const string YELLOW_BGR = "#fffbbb";
 
             string SP = Environment.NewLine;
             StringBuilder buf = new StringBuilder();

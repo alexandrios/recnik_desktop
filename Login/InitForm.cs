@@ -1,5 +1,3 @@
-//#define DEMO
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +25,14 @@ namespace SRWords
                 _loginTextBox.ReadOnly = false;
                 _genButton.Visible = true;
 
+                /*
                 for (int i = 1; i <= 1; i++)
                 {
                     int k = _groupBox.Controls.IndexOfKey("_keyTextBox" + i.ToString());
                     (_groupBox.Controls[k] as TextBox).Enabled = false; 
                 }
+                */
+
                 _checkKeyButton.Enabled = false;
             }
             else
@@ -68,6 +69,10 @@ namespace SRWords
             }
         }
 
+
+        /// <summary>
+        /// Формирование персонального кода.
+        /// </summary>
         private void GenCodeToSend()
         {
             #if (!DEMO)
@@ -87,11 +92,14 @@ namespace SRWords
                 _loginTextBox.ReadOnly = true;
                 _genButton.Visible = false;
 
+                /*
                 for (int i = 1; i <= 1; i++)
                 {
                     int k = _groupBox.Controls.IndexOfKey("_keyTextBox" + i.ToString());
                     (_groupBox.Controls[k] as TextBox).Enabled = true;
                 }
+                */
+
                 _checkKeyButton.Enabled = true;
                 _keyTextBox1.Focus();
             }
@@ -120,7 +128,7 @@ namespace SRWords
         private void _keyTextBox1_TextChanged(object sender, EventArgs e)
         {
             
-            TextBox tb = (sender as TextBox);
+            //TextBox tb = (sender as TextBox);
             /*
             int j = int.Parse(tb.Name.Substring(tb.Name.Length - 1, 1)) + 1;
             int k = 0;
