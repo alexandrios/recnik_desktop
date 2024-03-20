@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             this._wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._gridContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -49,7 +49,6 @@
             this._backToolStripSplitButton = new System.Windows.Forms.ToolStripSplitButton();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._panelTextBox = new System.Windows.Forms.Panel();
-            this._searchTextBox = new SRWords.MyTextBox();
             this._panel = new System.Windows.Forms.Panel();
             this._panelGrid = new System.Windows.Forms.Panel();
             this._rusDataGridView = new System.Windows.Forms.DataGridView();
@@ -120,6 +119,7 @@
             this._langRightLabel = new System.Windows.Forms.Label();
             this._langLeftLabel = new System.Windows.Forms.Label();
             this._switchPictureBox = new System.Windows.Forms.PictureBox();
+            this._searchTextBox = new SRWords.MyTextBox();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -151,7 +151,7 @@
             this._wordsDataGridView.AllowUserToResizeRows = false;
             this._wordsDataGridView.AutoGenerateColumns = false;
             this._wordsDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this._wordsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._wordsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._wordsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._wordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._wordsDataGridView.ColumnHeadersVisible = false;
@@ -214,51 +214,51 @@
             this.gridDelFromUserDictToolStripMenuItem});
             this._gridContextMenuStrip.Name = "alphaContextMenuStrip";
             this._gridContextMenuStrip.ShowImageMargin = false;
-            this._gridContextMenuStrip.Size = new System.Drawing.Size(353, 148);
+            this._gridContextMenuStrip.Size = new System.Drawing.Size(382, 148);
             this._gridContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._gridContextMenuStrip_Opening);
             // 
             // gridAOWToolStripMenuItem
             // 
             this.gridAOWToolStripMenuItem.Name = "gridAOWToolStripMenuItem";
-            this.gridAOWToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridAOWToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             // 
             // gridAOWToolStripSeparator
             // 
             this.gridAOWToolStripSeparator.Name = "gridAOWToolStripSeparator";
-            this.gridAOWToolStripSeparator.Size = new System.Drawing.Size(349, 6);
+            this.gridAOWToolStripSeparator.Size = new System.Drawing.Size(378, 6);
             // 
             // gridBackToolStripMenuItem
             // 
             this.gridBackToolStripMenuItem.Name = "gridBackToolStripMenuItem";
             this.gridBackToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.gridBackToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridBackToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.gridBackToolStripMenuItem.Text = "Назад";
             this.gridBackToolStripMenuItem.Click += new System.EventHandler(this.mainBackToolStripMenuItem_Click);
             // 
             // gridHistToolStripMenuItem
             // 
             this.gridHistToolStripMenuItem.Name = "gridHistToolStripMenuItem";
-            this.gridHistToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridHistToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.gridHistToolStripMenuItem.Text = "История поиска";
             this.gridHistToolStripMenuItem.Click += new System.EventHandler(this.mainHistToolStripMenuItem_Click);
             // 
             // gridSaveHistToolStripMenuItem
             // 
             this.gridSaveHistToolStripMenuItem.Name = "gridSaveHistToolStripMenuItem";
-            this.gridSaveHistToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridSaveHistToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.gridSaveHistToolStripMenuItem.Text = "Сохранить слово в истории";
             this.gridSaveHistToolStripMenuItem.Click += new System.EventHandler(this.mainSaveHistToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(349, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(378, 6);
             // 
             // gridSaveToUserDictToolStripMenuItem
             // 
             this.gridSaveToUserDictToolStripMenuItem.Name = "gridSaveToUserDictToolStripMenuItem";
             this.gridSaveToUserDictToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.gridSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.gridSaveToUserDictToolStripMenuItem.Text = "Сохранить слово в пользовательском словаре";
             this.gridSaveToUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainSaveToUserDictToolStripMenuItem_Click);
             // 
@@ -266,7 +266,7 @@
             // 
             this.gridDelFromUserDictToolStripMenuItem.Name = "gridDelFromUserDictToolStripMenuItem";
             this.gridDelFromUserDictToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.gridDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.gridDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.gridDelFromUserDictToolStripMenuItem.Text = "Удалить слово из пользовательского словаря";
             this.gridDelFromUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainDelFromUserDictToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@
             this._backToolStripSplitButton.DropDown = this._oldContextMenuStrip;
             this._backToolStripSplitButton.DropDownButtonWidth = 18;
             this._backToolStripSplitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._backToolStripSplitButton.Image = global::SRWords.Properties.Resources.backs;
+            this._backToolStripSplitButton.Image = ((System.Drawing.Image)(resources.GetObject("_backToolStripSplitButton.Image")));
             this._backToolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._backToolStripSplitButton.Margin = new System.Windows.Forms.Padding(10, 0, 0, 1);
             this._backToolStripSplitButton.Name = "_backToolStripSplitButton";
@@ -337,26 +337,12 @@
             this._panelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._panelTextBox.Controls.Add(this._searchTextBox);
             this._panelTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._panelTextBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this._panelTextBox.Location = new System.Drawing.Point(0, 344);
             this._panelTextBox.Name = "_panelTextBox";
             this._panelTextBox.Padding = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this._panelTextBox.Size = new System.Drawing.Size(152, 26);
             this._panelTextBox.TabIndex = 1;
-            // 
-            // _searchTextBox
-            // 
-            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
-            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this._searchTextBox.MaxLength = 100;
-            this._searchTextBox.Name = "_searchTextBox";
-            this._searchTextBox.Size = new System.Drawing.Size(139, 25);
-            this._searchTextBox.TabIndex = 1;
-            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
-            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
-            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
             // 
             // _panel
             // 
@@ -388,7 +374,7 @@
             this._rusDataGridView.AllowUserToResizeRows = false;
             this._rusDataGridView.AutoGenerateColumns = false;
             this._rusDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this._rusDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._rusDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._rusDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._rusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._rusDataGridView.ColumnHeadersVisible = false;
@@ -444,7 +430,7 @@
             this._dictDataGridView.AllowUserToResizeRows = false;
             this._dictDataGridView.AutoGenerateColumns = false;
             this._dictDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this._dictDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._dictDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._dictDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this._dictDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dictDataGridView.ColumnHeadersVisible = false;
@@ -523,41 +509,41 @@
             this.wbHideAllToolStripMenuItem});
             this._wbContextMenuStrip.Name = "_wbContextMenuStrip";
             this._wbContextMenuStrip.ShowImageMargin = false;
-            this._wbContextMenuStrip.Size = new System.Drawing.Size(353, 198);
+            this._wbContextMenuStrip.Size = new System.Drawing.Size(382, 198);
             this._wbContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._wbContextMenuStrip_Opening);
             // 
             // wbBackToolStripMenuItem
             // 
             this.wbBackToolStripMenuItem.Name = "wbBackToolStripMenuItem";
             this.wbBackToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.wbBackToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbBackToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbBackToolStripMenuItem.Text = "Назад";
             this.wbBackToolStripMenuItem.Click += new System.EventHandler(this.mainBackToolStripMenuItem_Click);
             // 
             // wbHistToolStripMenuItem
             // 
             this.wbHistToolStripMenuItem.Name = "wbHistToolStripMenuItem";
-            this.wbHistToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbHistToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbHistToolStripMenuItem.Text = "История поиска";
             this.wbHistToolStripMenuItem.Click += new System.EventHandler(this.mainHistToolStripMenuItem_Click);
             // 
             // wbSaveHistToolStripMenuItem
             // 
             this.wbSaveHistToolStripMenuItem.Name = "wbSaveHistToolStripMenuItem";
-            this.wbSaveHistToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbSaveHistToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbSaveHistToolStripMenuItem.Text = "Сохранить слово в истории";
             this.wbSaveHistToolStripMenuItem.Click += new System.EventHandler(this.mainSaveHistToolStripMenuItem_Click);
             // 
             // wbUserToolStripSeparator
             // 
             this.wbUserToolStripSeparator.Name = "wbUserToolStripSeparator";
-            this.wbUserToolStripSeparator.Size = new System.Drawing.Size(349, 6);
+            this.wbUserToolStripSeparator.Size = new System.Drawing.Size(378, 6);
             // 
             // wbSaveToUserDictToolStripMenuItem
             // 
             this.wbSaveToUserDictToolStripMenuItem.Name = "wbSaveToUserDictToolStripMenuItem";
             this.wbSaveToUserDictToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.wbSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbSaveToUserDictToolStripMenuItem.Text = "Сохранить слово в пользовательском словаре";
             this.wbSaveToUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainSaveToUserDictToolStripMenuItem_Click);
             // 
@@ -565,38 +551,38 @@
             // 
             this.wbDelFromUserDictToolStripMenuItem.Name = "wbDelFromUserDictToolStripMenuItem";
             this.wbDelFromUserDictToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.wbDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbDelFromUserDictToolStripMenuItem.Text = "Удалить слово из пользовательского словаря";
             this.wbDelFromUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainDelFromUserDictToolStripMenuItem_Click);
             // 
             // wbCopyToolStripSeparator
             // 
             this.wbCopyToolStripSeparator.Name = "wbCopyToolStripSeparator";
-            this.wbCopyToolStripSeparator.Size = new System.Drawing.Size(349, 6);
+            this.wbCopyToolStripSeparator.Size = new System.Drawing.Size(378, 6);
             // 
             // wbCopyToolStripMenuItem
             // 
             this.wbCopyToolStripMenuItem.Name = "wbCopyToolStripMenuItem";
-            this.wbCopyToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbCopyToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbCopyToolStripMenuItem.Text = "Копировать";
             this.wbCopyToolStripMenuItem.Click += new System.EventHandler(this.wbCopyToolStripMenuItem_Click);
             // 
             // wbShowHideToolStripSeparator
             // 
             this.wbShowHideToolStripSeparator.Name = "wbShowHideToolStripSeparator";
-            this.wbShowHideToolStripSeparator.Size = new System.Drawing.Size(349, 6);
+            this.wbShowHideToolStripSeparator.Size = new System.Drawing.Size(378, 6);
             // 
             // wbShowAllToolStripMenuItem
             // 
             this.wbShowAllToolStripMenuItem.Name = "wbShowAllToolStripMenuItem";
-            this.wbShowAllToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbShowAllToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbShowAllToolStripMenuItem.Text = "Показать все";
             this.wbShowAllToolStripMenuItem.Click += new System.EventHandler(this.wbShowAllToolStripMenuItem_Click);
             // 
             // wbHideAllToolStripMenuItem
             // 
             this.wbHideAllToolStripMenuItem.Name = "wbHideAllToolStripMenuItem";
-            this.wbHideAllToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.wbHideAllToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
             this.wbHideAllToolStripMenuItem.Text = "Скрыть все";
             this.wbHideAllToolStripMenuItem.Click += new System.EventHandler(this.wbHideAllToolStripMenuItem_Click);
             // 
@@ -634,7 +620,7 @@
             // 
             this._searchByLetterToolStripButton.AutoSize = false;
             this._searchByLetterToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._searchByLetterToolStripButton.Image = global::SRWords.Properties.Resources.Lupa;
+            this._searchByLetterToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("_searchByLetterToolStripButton.Image")));
             this._searchByLetterToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._searchByLetterToolStripButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this._searchByLetterToolStripButton.Name = "_searchByLetterToolStripButton";
@@ -648,7 +634,8 @@
             this._setupToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this._setupToolStripButton.BackColor = System.Drawing.Color.Transparent;
             this._setupToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._setupToolStripButton.Image = global::SRWords.Properties.Resources.shesterna;
+            this._setupToolStripButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._setupToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("_setupToolStripButton.Image")));
             this._setupToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._setupToolStripButton.Margin = new System.Windows.Forms.Padding(0, 0, 10, 1);
             this._setupToolStripButton.Name = "_setupToolStripButton";
@@ -669,7 +656,7 @@
             this._dictToolStripSplitButton.DropDown = this._dictContextMenuStrip;
             this._dictToolStripSplitButton.DropDownButtonWidth = 18;
             this._dictToolStripSplitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this._dictToolStripSplitButton.Image = global::SRWords.Properties.Resources.books2;
+            this._dictToolStripSplitButton.Image = ((System.Drawing.Image)(resources.GetObject("_dictToolStripSplitButton.Image")));
             this._dictToolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._dictToolStripSplitButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this._dictToolStripSplitButton.Name = "_dictToolStripSplitButton";
@@ -736,41 +723,41 @@
             // 
             this.mainBackToolStripMenuItem.Name = "mainBackToolStripMenuItem";
             this.mainBackToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.mainBackToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainBackToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainBackToolStripMenuItem.Text = "&Назад";
             this.mainBackToolStripMenuItem.Click += new System.EventHandler(this.mainBackToolStripMenuItem_Click);
             // 
             // mainHistToolStripMenuItem
             // 
             this.mainHistToolStripMenuItem.Name = "mainHistToolStripMenuItem";
-            this.mainHistToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainHistToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainHistToolStripMenuItem.Text = "&История поиска";
             this.mainHistToolStripMenuItem.Click += new System.EventHandler(this.mainHistToolStripMenuItem_Click);
             // 
             // mainSaveHistToolStripMenuItem
             // 
             this.mainSaveHistToolStripMenuItem.Name = "mainSaveHistToolStripMenuItem";
-            this.mainSaveHistToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainSaveHistToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainSaveHistToolStripMenuItem.Text = "&Сохранить слово в истории";
             this.mainSaveHistToolStripMenuItem.Click += new System.EventHandler(this.mainSaveHistToolStripMenuItem_Click);
             // 
             // mainClearHistToolStripMenuItem
             // 
             this.mainClearHistToolStripMenuItem.Name = "mainClearHistToolStripMenuItem";
-            this.mainClearHistToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainClearHistToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainClearHistToolStripMenuItem.Text = "&Удалить историю";
             this.mainClearHistToolStripMenuItem.Click += new System.EventHandler(this.mainClearHistToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(374, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(403, 6);
             // 
             // mainSaveToUserDictToolStripMenuItem
             // 
             this.mainSaveToUserDictToolStripMenuItem.Name = "mainSaveToUserDictToolStripMenuItem";
             this.mainSaveToUserDictToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.mainSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainSaveToUserDictToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainSaveToUserDictToolStripMenuItem.Text = "Со&хранить слово в пользовательском словаре";
             this.mainSaveToUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainSaveToUserDictToolStripMenuItem_Click);
             // 
@@ -778,21 +765,21 @@
             // 
             this.mainDelFromUserDictToolStripMenuItem.Name = "mainDelFromUserDictToolStripMenuItem";
             this.mainDelFromUserDictToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.mainDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainDelFromUserDictToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainDelFromUserDictToolStripMenuItem.Text = "У&далить слово из пользовательского словаря";
             this.mainDelFromUserDictToolStripMenuItem.Click += new System.EventHandler(this.mainDelFromUserDictToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(374, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(403, 6);
             // 
             // mainFindByLetterToolStripMenuItem
             // 
             this.mainFindByLetterToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.mainFindByLetterToolStripMenuItem.Name = "mainFindByLetterToolStripMenuItem";
             this.mainFindByLetterToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.mainFindByLetterToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainFindByLetterToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainFindByLetterToolStripMenuItem.Text = "Поиск по &буквам";
             this.mainFindByLetterToolStripMenuItem.Click += new System.EventHandler(this.mainFindByLetterToolStripMenuItem_Click);
             // 
@@ -800,19 +787,19 @@
             // 
             this.keyBoardToolStripMenuItem.Name = "keyBoardToolStripMenuItem";
             this.keyBoardToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.keyBoardToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.keyBoardToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.keyBoardToolStripMenuItem.Text = "&Виртуальная клавиатура";
             this.keyBoardToolStripMenuItem.Click += new System.EventHandler(this.keyBoardToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(374, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(403, 6);
             // 
             // mainExitToolStripMenuItem
             // 
             this.mainExitToolStripMenuItem.Name = "mainExitToolStripMenuItem";
-            this.mainExitToolStripMenuItem.Size = new System.Drawing.Size(377, 22);
+            this.mainExitToolStripMenuItem.Size = new System.Drawing.Size(406, 22);
             this.mainExitToolStripMenuItem.Text = "В&ыход";
             this.mainExitToolStripMenuItem.Click += new System.EventHandler(this.mainExitToolStripMenuItem_Click);
             // 
@@ -839,7 +826,7 @@
             // 
             this.cyrToolStripMenuItem.Name = "cyrToolStripMenuItem";
             this.cyrToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.K)));
-            this.cyrToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.cyrToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.cyrToolStripMenuItem.Text = "Алфавит: &Кириллица";
             this.cyrToolStripMenuItem.Click += new System.EventHandler(this.cyrToolStripMenuItem_Click);
             // 
@@ -847,33 +834,33 @@
             // 
             this.latToolStripMenuItem.Name = "latToolStripMenuItem";
             this.latToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L)));
-            this.latToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.latToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.latToolStripMenuItem.Text = "Алфавит: &Латиница";
             this.latToolStripMenuItem.Click += new System.EventHandler(this.latToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(224, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(228, 6);
             // 
             // mainSetupToolStripMenuItem
             // 
             this.mainSetupToolStripMenuItem.Name = "mainSetupToolStripMenuItem";
-            this.mainSetupToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.mainSetupToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mainSetupToolStripMenuItem.Text = "&Основные параметры";
             this.mainSetupToolStripMenuItem.Click += new System.EventHandler(this.mainSetupToolStripMenuItem_Click);
             // 
             // oformToolStripMenuItem
             // 
             this.oformToolStripMenuItem.Name = "oformToolStripMenuItem";
-            this.oformToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.oformToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.oformToolStripMenuItem.Text = "&Настройки оформления";
             this.oformToolStripMenuItem.Click += new System.EventHandler(this.oformToolStripMenuItem_Click);
             // 
             // dictSetupToolStripMenuItem
             // 
             this.dictSetupToolStripMenuItem.Name = "dictSetupToolStripMenuItem";
-            this.dictSetupToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.dictSetupToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.dictSetupToolStripMenuItem.Text = "Настройки &словарей";
             this.dictSetupToolStripMenuItem.Click += new System.EventHandler(this.dictSetupToolStripMenuItem_Click);
             // 
@@ -906,6 +893,8 @@
             // 
             this.rus10ToolStripMenuItem.Name = "rus10ToolStripMenuItem";
             this.rus10ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.rus10ToolStripMenuItem.Text = "Mail";
+            this.rus10ToolStripMenuItem.Click += new System.EventHandler(this.rus10ToolStripMenuItem_Click);
             // 
             // _notifyContextMenuStrip
             // 
@@ -993,8 +982,8 @@
             // _langRightLabel
             // 
             this._langRightLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._langRightLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this._langRightLabel.ForeColor = System.Drawing.Color.Red;
+            this._langRightLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._langRightLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._langRightLabel.Location = new System.Drawing.Point(104, 5);
             this._langRightLabel.Name = "_langRightLabel";
             this._langRightLabel.Size = new System.Drawing.Size(65, 36);
@@ -1006,8 +995,8 @@
             // _langLeftLabel
             // 
             this._langLeftLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._langLeftLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._langLeftLabel.ForeColor = System.Drawing.Color.Red;
+            this._langLeftLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this._langLeftLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this._langLeftLabel.Location = new System.Drawing.Point(2, 5);
             this._langLeftLabel.Name = "_langLeftLabel";
             this._langLeftLabel.Size = new System.Drawing.Size(65, 36);
@@ -1027,6 +1016,21 @@
             this._switchPictureBox.TabIndex = 0;
             this._switchPictureBox.TabStop = false;
             this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
+            // 
+            // _searchTextBox
+            // 
+            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
+            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this._searchTextBox.MaxLength = 100;
+            this._searchTextBox.Name = "_searchTextBox";
+            this._searchTextBox.Size = new System.Drawing.Size(139, 25);
+            this._searchTextBox.TabIndex = 1;
+            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
+            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
+            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
             // 
             // ListForm
             // 

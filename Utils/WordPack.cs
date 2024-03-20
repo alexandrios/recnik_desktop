@@ -129,16 +129,22 @@ namespace SRWords
                      "style=\"color:black; font:normal 16px Arial;\" " +
                      //"onclick=\"facechange('#" + nameId + "'); return true;\">" +
                      "onclick=\"viewdiv('" + nameId + "'); return true;\">" +
-                     (Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + "</a>" +
+                     //(Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + 
+                     "v" +
+                     "</a>" +
                      
                     // "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
                     // "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
                     // "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
 
                      "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+
+                     /*
                      "<a href='~" + nameId + "'><img src=\"" + Utils.GetWorkDirectory() + img + "\"" +
                      //" alt=\"Найти слово в сербско-русском словаре\" border=\"0\" width=\"12\" height=\"12\"></a>" +
                      " border=\"0\" width=\"12\" height=\"12\"></a>" +
+                     */
+                     "<a href='~" + nameId + "'>" + (Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + "</a>" +
 
 
                      "<div id=\"" + nameId + "\"; class=\"SrbBlock\"; style=\"display:" + display + "\">" +
@@ -146,7 +152,8 @@ namespace SRWords
                      "</div>";
 
                 if (numId < cnt)
-                    t += "<HR>";
+                    //    t += "<HR>";
+                    t += "<br/><br/>";
 
                 numId++;
             }

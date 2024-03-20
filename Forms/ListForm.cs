@@ -1324,7 +1324,7 @@ namespace SRWords
 
         private void _wordsDataGridView_Enter(object sender, EventArgs e)
         {
-            (sender as DataGridView).DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+            (sender as DataGridView).DefaultCellStyle.SelectionBackColor = SystemColors.GradientActiveCaption; // .Highlight;
         }
 
         private void _wordsDataGridView_Leave(object sender, EventArgs e)
@@ -2675,6 +2675,11 @@ namespace SRWords
             }
 
             CurrentDGV().Focus();
+        }
+
+        private void rus10ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mail.SendMail();
         }
     }
 }
