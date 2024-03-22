@@ -49,6 +49,7 @@
             this._backToolStripSplitButton = new System.Windows.Forms.ToolStripSplitButton();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._panelTextBox = new System.Windows.Forms.Panel();
+            this._searchTextBox = new SRWords.MyTextBox();
             this._panel = new System.Windows.Forms.Panel();
             this._panelGrid = new System.Windows.Forms.Panel();
             this._rusDataGridView = new System.Windows.Forms.DataGridView();
@@ -119,7 +120,6 @@
             this._langRightLabel = new System.Windows.Forms.Label();
             this._langLeftLabel = new System.Windows.Forms.Label();
             this._switchPictureBox = new System.Windows.Forms.PictureBox();
-            this._searchTextBox = new SRWords.MyTextBox();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -343,6 +343,21 @@
             this._panelTextBox.Padding = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this._panelTextBox.Size = new System.Drawing.Size(152, 26);
             this._panelTextBox.TabIndex = 1;
+            // 
+            // _searchTextBox
+            // 
+            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
+            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this._searchTextBox.MaxLength = 100;
+            this._searchTextBox.Name = "_searchTextBox";
+            this._searchTextBox.Size = new System.Drawing.Size(139, 25);
+            this._searchTextBox.TabIndex = 1;
+            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
+            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
+            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
             // 
             // _panel
             // 
@@ -1016,21 +1031,6 @@
             this._switchPictureBox.TabIndex = 0;
             this._switchPictureBox.TabStop = false;
             this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
-            // 
-            // _searchTextBox
-            // 
-            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
-            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this._searchTextBox.MaxLength = 100;
-            this._searchTextBox.Name = "_searchTextBox";
-            this._searchTextBox.Size = new System.Drawing.Size(139, 25);
-            this._searchTextBox.TabIndex = 1;
-            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
-            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
-            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
             // 
             // ListForm
             // 

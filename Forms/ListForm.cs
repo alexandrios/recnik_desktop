@@ -909,7 +909,7 @@ namespace SRWords
             {
                 if (currTableName != "rus")
                 {
-                    searchString = Utils.CyrToLat(searchString); //baseAlphabet == "cyr" ? Utils.LatToCyr(searchString) : Utils.CyrToLat(searchString);
+                    searchString = Utils.CyrToLat(searchString); 
                 }
 
                 foreach (DataRowView dr in CurrentBS().List) 
@@ -1178,7 +1178,7 @@ namespace SRWords
         private void _searchTextBox_TextChanged(object sender, EventArgs e)
         {
             string text = _searchTextBox.Text.Trim();
-            int pos = _searchTextBox.SelectionStart; // text.Length;
+            int pos = _searchTextBox.SelectionStart; 
 
             string newText = AutoReplacer(text, ref pos);
             if (String.Compare(text, newText) != 0)
@@ -1186,7 +1186,7 @@ namespace SRWords
                 text = newText;
                 _searchTextBox.TextChanged -= _searchTextBox_TextChanged;
                 SetSearchTextBox(text);
-                //pos = text.Length;
+
                 _searchTextBox.SelectionStart = pos;
                 _searchTextBox.TextChanged += _searchTextBox_TextChanged;
             }
@@ -2664,14 +2664,10 @@ namespace SRWords
             if (currTableName == "words")
             {
                 rusItem_Click(null, null);
-                //_langLeftLabel.Text = "Русский";
-                //_langRightLabel.Text = "Сербский";
             }
             else
             {
                 baseItem_Click(null, null);
-                //_langLeftLabel.Text = "Сербский";
-                //_langRightLabel.Text = "Русский";
             }
 
             CurrentDGV().Focus();

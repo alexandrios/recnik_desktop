@@ -34,7 +34,7 @@ namespace SRWords
             };
 
             // адрес smtp-сервера и порт, с которого будем отправлять письмо
-            SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587) //25)
+            SmtpClient smtp = new SmtpClient("smtp.mail.ru", 25) //587) //25)
             {
                 // логин и пароль (пароль для внешнего приложения "Send mails from recnik desktop")
                 Credentials = new NetworkCredential("alex27@mail.ru", "SJJsu1ASYU0irwitfirh"),
