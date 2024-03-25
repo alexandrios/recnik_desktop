@@ -32,22 +32,23 @@ namespace SRWords
             Application.Run(new ListForm(false));
 #else
 
-            //Application.Run(new InitForm());
+            Application.Run(new InitOnlineForm());
 
             
             bool isAdmin = false;
-                if (args.Length != 0)
-                    isAdmin = (args[0].ToUpper() == "ADMIN");
+            if (args.Length != 0)
+                isAdmin = (args[0].ToUpper() == "ADMIN");
 
-                if (SerialNum.CompareKey())
-                {
-                    //GC.KeepAlive(mutex);
-                    Application.Run(new ListForm(isAdmin));
-                }
-                else
-                {
-                    Application.Run(new InitForm());
-                }
+            if (SerialNum.CompareKey())
+            {
+                //GC.KeepAlive(mutex);
+                Application.Run(new ListForm(isAdmin));
+            }
+            else
+            {
+                // TODO: InitOnlineForm
+                Application.Run(new InitForm());
+            }
             
 #endif
 #endif

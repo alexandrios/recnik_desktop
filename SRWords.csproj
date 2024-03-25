@@ -90,6 +90,12 @@
     <Compile Include="Articles\ArticleInfo.cs" />
     <Compile Include="Articles\Utils.cs" />
     <Compile Include="Articles\WordInfo.cs" />
+    <Compile Include="Login\InitOnlineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\InitOnlineForm.Designer.cs">
+      <DependentUpon>InitOnlineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Css.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\DBChanges\ChangesFromServer.cs" />
@@ -141,6 +147,10 @@
     </Compile>
     <Compile Include="Utils\SRBWord.cs" />
     <Compile Include="Utils\WordPack.cs" />
+    <EmbeddedResource Include="Login\InitOnlineForm.resx">
+      <DependentUpon>InitOnlineForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\InitForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>InitForm.cs</DependentUpon>
