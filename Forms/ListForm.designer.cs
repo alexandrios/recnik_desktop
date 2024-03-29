@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._gridContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -120,6 +120,8 @@
             this._langRightLabel = new System.Windows.Forms.Label();
             this._langLeftLabel = new System.Windows.Forms.Label();
             this._switchPictureBox = new System.Windows.Forms.PictureBox();
+            this._donatePanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -141,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this._panelReverse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._switchPictureBox)).BeginInit();
+            this._donatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _wordsDataGridView
@@ -159,15 +162,15 @@
             this.NAME});
             this._wordsDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._wordsDataGridView.DataSource = this._srbBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this._wordsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._wordsDataGridView.EnableHeadersVisualStyles = false;
             this._wordsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -323,6 +326,7 @@
             // _splitContainer.Panel2
             // 
             this._splitContainer.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this._splitContainer.Panel2.Controls.Add(this._donatePanel);
             this._splitContainer.Panel2.Controls.Add(this._webBrowser);
             this._splitContainer.Panel2MinSize = 130;
             this._splitContainer.Size = new System.Drawing.Size(484, 374);
@@ -397,15 +401,15 @@
             this.dataGridViewTextBoxColumn2});
             this._rusDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._rusDataGridView.DataSource = this._rusBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this._rusDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._rusDataGridView.Location = new System.Drawing.Point(0, 0);
             this._rusDataGridView.MultiSelect = false;
@@ -453,15 +457,15 @@
             this.dataGridViewTextBoxColumn1});
             this._dictDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._dictDataGridView.DataSource = this._dictBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._dictDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dictDataGridView.Location = new System.Drawing.Point(0, 0);
             this._dictDataGridView.MultiSelect = false;
@@ -496,12 +500,14 @@
             // 
             // _webBrowser
             // 
+            this._webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._webBrowser.ContextMenuStrip = this._wbContextMenuStrip;
-            this._webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._webBrowser.Location = new System.Drawing.Point(0, 0);
+            this._webBrowser.Location = new System.Drawing.Point(0, 72);
             this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this._webBrowser.Name = "_webBrowser";
-            this._webBrowser.Size = new System.Drawing.Size(322, 370);
+            this._webBrowser.Size = new System.Drawing.Size(322, 298);
             this._webBrowser.TabIndex = 0;
             this._webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this._webBrowser_Navigated);
             this._webBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this._webBrowser_Navigating);
@@ -1032,6 +1038,26 @@
             this._switchPictureBox.TabStop = false;
             this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
             // 
+            // _donatePanel
+            // 
+            this._donatePanel.Controls.Add(this.label1);
+            this._donatePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this._donatePanel.Location = new System.Drawing.Point(0, 0);
+            this._donatePanel.Name = "_donatePanel";
+            this._donatePanel.Size = new System.Drawing.Size(322, 70);
+            this._donatePanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(74, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Сделайте донат!";
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1081,6 +1107,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this._panelReverse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._switchPictureBox)).EndInit();
+            this._donatePanel.ResumeLayout(false);
+            this._donatePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1176,5 +1204,7 @@
         private System.Windows.Forms.PictureBox _switchPictureBox;
         private System.Windows.Forms.Label _langRightLabel;
         private System.Windows.Forms.Label _langLeftLabel;
+        private System.Windows.Forms.Panel _donatePanel;
+        private System.Windows.Forms.Label label1;
     }
 }

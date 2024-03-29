@@ -88,15 +88,23 @@ namespace SRWords
         public int tmpWordsCountUserDict;
 
         public static bool IsAdmin;
+        public static bool IsDonated;
 
-        public ListForm(bool isAdmin)
+        public ListForm(bool isAdmin, bool isDonated)
         {
             IsAdmin = isAdmin;
+            IsDonated = isDonated;
 
             SplashForm3.ShowSplashScreen();
             SplashForm3.SetStatus("Загрузка настроек ...");
             
             InitializeComponent();
+
+            if (IsDonated)
+            {
+                _donatePanel.Visible = false;
+                _webBrowser.Dock = DockStyle.Fill;
+            }
 
 #if DEMO
             _demoLabel.Visible = true;

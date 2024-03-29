@@ -32,24 +32,68 @@ namespace SRWords
             Application.Run(new ListForm(false));
 #else
 
-            Application.Run(new InitOnlineForm());
+            bool isSuccess = false;
 
-            
             bool isAdmin = false;
             if (args.Length != 0)
                 isAdmin = (args[0].ToUpper() == "ADMIN");
 
-            if (SerialNum.CompareKey())
+
+
+         //Application.Run(new InitOnlineForm());
+
+
+            if (String.IsNullOrEmpty(SerialNum.GetLogin()) || String.IsNullOrEmpty(SerialNum.GetEmail()))
             {
-                //GC.KeepAlive(mutex);
-                Application.Run(new ListForm(isAdmin));
+                Application.Run(new InitOnlineForm(InitOnlineForm.InitType.LOGIN));
             }
             else
             {
-                // TODO: InitOnlineForm
-                Application.Run(new InitForm());
+                // Есть донат в бд?
+                string don = SerialNum.GetDonate();
+                int donate = 0;
+                int.TryParse(don, out donate);
+                if (donate > 0)
+                {
+                    if (SerialNum.CompareKey())
+                    {
+                        isSuccess = true;
+                        Application.Run(new ListForm(isAdmin, true));
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
+                }
+                else
+                {
+                    if (SerialNum.GetFailsInt() > SerialNum.MAX_FAILCOUNT)
+                    {
+                        // Вход через ввод ключа
+                        isSuccess = true;
+                        Application.Run(new InitOnlineForm(InitOnlineForm.InitType.KEY));
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
+                }
+
+                if (!isSuccess)
+                {
+                    SerialNum.DonateResult donateResult = SerialNum.GetDonationInfo();
+                    if (donateResult != SerialNum.DonateResult.FAIL)
+                    {
+                        Application.Run(new ListForm(isAdmin, donateResult == SerialNum.DonateResult.OK));
+                    }
+                    else
+                    {
+                        // Вход через ввод ключа
+                        Application.Run(new InitOnlineForm(InitOnlineForm.InitType.KEY));
+                    }
+                }
             }
-            
+
 #endif
 #endif
             //GC.KeepAlive(mutex);

@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using System.Management;
 using System.IO;
 using System.Security.Cryptography;
-
+using System.Net;
 
 namespace SRWords
 {
     public static class SerialNum
     {
+        public const int MAX_FAILCOUNT = 9;
+        const int MAX_DONATE_INTERVAL = 14;
 
         public static bool Draw2Spinning()
         {
@@ -372,6 +374,88 @@ namespace SRWords
             return ADSData.MdFiveGetLogin();
         }
 
+        public static void SaveLogin(string login)
+        {
+            string result;
+            int loginLength;
+            LoginToHex(login, out result, out loginLength);
+            ADSData.MdFiveSetLogin(loginLength, (loginLength + 5).ToString("x"), result);
+        }
+
+        public static void SaveDonate(string donate)
+        {
+            string result;
+            int donateLength;
+            DonateToHex(donate, out result, out donateLength);
+            ADSData.MdFiveSetDonate(donateLength, (donateLength + 3).ToString("x"), result);
+        }
+
+        public static string GetDonate()
+        {
+            string result = "";
+            string donate = ADSData.MdFiveGetDonate();
+            donate = Scambling2(donate);
+
+            int len = donate.Length;
+            for (int i = 0; i < len / 4; i++)
+            {
+                string hex = donate.Substring(i * 4, 4);
+                int code = int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
+                Char ch = Convert.ToChar(code);
+                result += ch.ToString();
+            }
+
+            return result;
+        }
+
+
+        public static void SaveFails(string fc)
+        {
+            string result;
+            int fcLength;
+            DonateToHex(fc, out result, out fcLength);
+            ADSData.MdFiveSetFails(fcLength, (fcLength + 3).ToString("x"), result);
+        }
+
+        public static string GetFails()
+        {
+            string result = "";
+            string fc = ADSData.MdFiveGetFails();
+            fc = Scambling2(fc);
+
+            int len = fc.Length;
+            for (int i = 0; i < len / 4; i++)
+            {
+                string hex = fc.Substring(i * 4, 4);
+                int code = int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
+                Char ch = Convert.ToChar(code);
+                result += ch.ToString();
+            }
+
+            return result;
+        }
+
+        public static int GetFailsInt()
+        {
+            // Прочитать failCount 
+            string s = GetFails();
+            int failCount;
+            if (!int.TryParse(s, out failCount))
+                failCount = SerialNum.MAX_FAILCOUNT;
+
+            return failCount;
+        }
+
+        public static string GetEmail()
+        {
+            return ADSData.MdFiveGetEmail();
+        }
+
+        public static void SaveEmail(string email)
+        {
+            ADSData.MdFiveSetEmail(email);
+        }
+
         /// <summary>
         /// На основании информации о компьютере и сохраненном логине генерируем ключ.
         /// </summary>
@@ -407,6 +491,213 @@ namespace SRWords
             string computedKey = MakeKeyByLoginInfo(GetLoginHex(), DensityWeber(), false);
             return String.Equals(storedKey, computedKey);
         }
+
+        public static void GenerateAndSaveKey()
+        {
+            // Рассчитать ключ
+            string computedKey = MakeKeyByLoginInfo(GetLoginHex(), DensityWeber(), false);
+
+            // Записать ключ в бд
+            ADSData.MdFiveSetKey(computedKey);
+        }
+
+        private static void ServerWarning(string response)
+        {
+            // Проверить интернет
+            if (!InternetAvailable())
+            {
+                MessageBox.Show("Проверьте соединение с интернетом!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string t = response + Environment.NewLine + "unexpected response from the server";
+                MessageBox.Show(t, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static bool InternetAvailable()
+        {
+            string strServer = "http://google.com";
+            try
+            {
+                HttpWebRequest reqFP = (HttpWebRequest)HttpWebRequest.Create(strServer);
+                HttpWebResponse rspFP = (HttpWebResponse)reqFP.GetResponse();
+                if (HttpStatusCode.OK == rspFP.StatusCode)
+                {
+                    // HTTP = 200 - Интернет безусловно есть! 
+                    rspFP.Close();
+                    return true;
+                }
+                else
+                {
+                    // сервер вернул отрицательный ответ, инета нет
+                    rspFP.Close();
+                    return false;
+                }
+            }
+            catch (WebException)
+            {
+                // Ошибка, интернета у нас нет.
+                return false;
+            }
+        }
+
+        public static bool SendRegistration(string login, string email)
+        {
+            // Отослать логин, email, персональный код на сервер
+            string parameters = String.Format("login={0}&email={1}&perscode={2}", login, email, RestansDay());
+            ScanWord.Rest rest = new ScanWord.Rest();
+            string response = "";
+            try
+            {
+                response = rest.InsertRegistrInfo(parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (response != "OK")
+            {
+                ServerWarning(response);
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool ReadRegistration(string login, string email)
+        {
+            // Убедиться, что информация записана на сервере в БД
+            string parameters = String.Format("login={0}&email={1}&perscode={2}", login, email, RestansDay());
+            ScanWord.Rest rest = new ScanWord.Rest();
+            List<ScanWord.UserDonation> donation = null;
+            try
+            {
+                donation = rest.GetUserDonation(parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            if (donation == null || donation.Count == 0)
+            {
+                // запись не найдена на сервере
+                ServerWarning("0");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static DonateResult GetDonationInfo()
+        {
+            ScanWord.Rest rest = new ScanWord.Rest();
+            string parameters = String.Format("login={0}&email={1}&perscode={2}", GetLogin(), GetEmail(), RestansDay());
+            List<ScanWord.UserDonation> donation = null;
+            try
+            {
+                donation = rest.GetUserDonation(parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + Environment.NewLine + "Невозможно получить информацию о регистрации.", 
+                    "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (donation == null || donation.Count == 0)
+            {
+                // запись не найдена на сервере
+                ServerWarning("0");
+
+                // Прочитать failCount 
+                string s = GetFails();
+                int failCount;
+                if (!int.TryParse(s, out failCount))
+                    failCount = MAX_FAILCOUNT;
+                // Увеличить счетчик failCount
+                failCount++;
+                // Записать в бд failCount
+                SaveFails(failCount.ToString());
+
+                if (failCount <= MAX_FAILCOUNT)
+                {
+                    return DonateResult.NORMAL;
+                }
+                else
+                {
+                    MessageBox.Show("Превышено число запусков без подключения к интернету!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return DonateResult.FAIL;
+                }
+            }
+            else
+            {
+                // TODO: сделать, чтобы с сервера донат приходил в зашифрованном виде!
+                int donate = 0;
+                int.TryParse(donation[0].donate, out donate);
+                if (donate > 0)
+                {
+                    // Записать донат в бд (в другом зашифрованном виде)
+                    SaveDonate(donate.ToString());
+
+                    // Сгенерировать ключ и сохранить его в бд
+                    GenerateAndSaveKey();
+
+                    // Обнулить в бд failCount
+                    SaveFails("0");
+
+                    // при первом выполнении этого условия сказать СПАСИБО
+                    MessageBox.Show("Спасибо за Ваш донат!" + Environment.NewLine + "Приятной работы со словарем!", 
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    return DonateResult.OK;
+                }
+                else
+                {
+                    DateTime date = DateTime.ParseExact(donation[0].date, "yyyy-MM-dd HH:mm:ss",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+                    string note = donation[0].note;
+                    int interval = Convert.ToInt32(Math.Floor((DateTime.Now - date).TotalDays));
+
+                    if (interval <= MAX_DONATE_INTERVAL)
+                    {
+                        //MessageBox.Show("Не забудьте сделать донат!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return DonateResult.NORMAL;
+                    }
+                    else
+                    {
+                        // Записать в бд failCount
+                        SaveFails((MAX_FAILCOUNT + 1).ToString());
+                        MessageBox.Show("Истекло время работы без завершения регистрации!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return DonateResult.FAIL;
+                    }
+                }
+            }
+        }
+
+        public static void DonateToHex(string donate, out string result, out int donateLength)
+        {
+            result = "";
+            donateLength = donate.Length;
+            for (int i = 0; i < donateLength; i++)
+            {
+                Char ch = donate[i];
+                int code = Convert.ToInt16(ch);
+                string hex = code.ToString("x4");
+                result += hex;
+            }
+
+            result = SplitWidthOrientation(result).ToLower();
+        }
+
+        public enum DonateResult
+        { 
+            OK,
+            NORMAL,
+            FAIL
+        }
+
 #endif
     }
 }

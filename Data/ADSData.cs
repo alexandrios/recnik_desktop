@@ -280,6 +280,7 @@ namespace SRWords
                     seed = SerialNum.OrphoGetting(s);
                     t3 += seed;
                 }
+
                 string cmd = "insert into valpost (PREFIX, EXISTANCE, POSTFIX) values('" + t1 + "', '" + t2 + "', '" + t3 + "')";
                 RunCommand(cmd);
             }
@@ -352,31 +353,6 @@ namespace SRWords
         }
 
         /// <summary>
-        /// Получить ключ из бд.
-        /// </summary>
-        /// <returns></returns>
-        public static string MdFiveGetKey()
-        {
-            string result = String.Empty;
-            string cmd = "select count(*) cnt from valpost";
-            int? cnt = RunCommandScalar<int>(cmd);
-            if (cnt != null && cnt == 0)
-            {
-                return String.Empty;
-            }
-
-            List<String> sList = new List<string>();
-            cmd = "select substring(prefix," + MdFiveGetLogin().Length.ToString() + 
-                    "+1,8*4) res from valpost where id=12";
-            if (RunScriptResList(cmd, out sList) == 1)
-            {
-                result = sList[0];
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Сохранить ключ в бд.
         /// </summary>
         /// <param name="key"></param>
@@ -401,6 +377,168 @@ namespace SRWords
             {
                 throw new Exception("Initialization error (0051).");
             }
+        }
+
+        /// <summary>
+        /// Получить ключ из бд.
+        /// </summary>
+        /// <returns></returns>
+        public static string MdFiveGetKey()
+        {
+            string result = String.Empty;
+            string cmd = "select count(*) cnt from valpost";
+            int? cnt = RunCommandScalar<int>(cmd);
+            if (cnt != null && cnt == 0)
+            {
+                return String.Empty;
+            }
+
+            List<String> sList = new List<string>();
+            cmd = "select substring(prefix," + MdFiveGetLogin().Length.ToString() + 
+                    "+1,8*4) res from valpost where id=12";
+            if (RunScriptResList(cmd, out sList) == 1)
+            {
+                result = sList[0];
+            }
+
+            return result;
+        }
+
+        public static void MdFiveSetEmail(string email)
+        {
+            string cmd = "update changes set email='" + email + "' where id=0";
+            RunCommand(cmd);
+        }
+
+        public static string MdFiveGetEmail()
+        {
+            string cmd = "select email from changes";
+            string email = RunCommandString(cmd);
+            return email;
+        }
+
+        /// <summary>
+        /// Сохранение доната. lenHex - строка из 1 символа!
+        /// </summary>
+        public static void MdFiveSetDonate(int donateLength, string lenHex, string donate)
+        {
+            string cmd = "select count(*) cnt from valpost";
+            int? cnt = RunCommandScalar<int>(cmd);
+            if (cnt != null && cnt == 0)
+            {
+                return;
+            }
+
+            if (cnt != null && cnt == 51)
+            {
+                cmd = "update valpost set existance=substring(existance, 1, 78)+'" + lenHex + "'+substring(existance, 80, 49) where id=10";
+                RunCommand(cmd);
+
+                cmd = "update valpost set postfix=substring(postfix, 1, " + donateLength.ToString() +
+                    ")+'" + donate + "'+ substring(postfix, 1, (128-" + donateLength.ToString() + "-" +
+                    donate.Length.ToString() + ")) where id=" + (36).ToString();
+                RunCommand(cmd);
+            }
+            else
+            {
+                throw new Exception("Initialization error (0051).");
+            }
+        }
+
+        /// <summary>
+        /// Получить донат из бд.
+        /// </summary>
+        /// <returns></returns>
+        public static string MdFiveGetDonate()
+        {
+            string cmd = "select count(*) cnt from valpost";
+            int? cnt = RunCommandScalar<int>(cmd);
+            if (cnt != null && cnt == 0)
+            {
+                return String.Empty;
+            }
+
+            int donateLength = 0;
+            int len = 0;
+            List<String> sList = new List<string>();
+            cmd = "select substring(existance,79,1) res from valpost where id=10";
+            if (RunScriptResList(cmd, out sList) == 1)
+            {
+                len = int.Parse(sList[0], System.Globalization.NumberStyles.HexNumber);
+                donateLength = len - 3;
+            }
+
+            cmd = "select substring(postfix," + (donateLength + 1).ToString() +
+                    "," + (donateLength * 4).ToString() +
+                    ") res from valpost where id=" + (36).ToString();
+            if (RunScriptResList(cmd, out sList) == 1)
+            {
+                return sList[0];
+            }
+
+            return String.Empty;
+        }
+
+        /// <summary>
+        /// Сохранение FailsCount. lenHex - строка из 1 символа!
+        /// </summary>
+        public static void MdFiveSetFails(int fcLength, string lenHex, string fc)
+        {
+            string cmd = "select count(*) cnt from valpost";
+            int? cnt = RunCommandScalar<int>(cmd);
+            if (cnt != null && cnt == 0)
+            {
+                return;
+            }
+
+            if (cnt != null && cnt == 51)
+            {
+                cmd = "update valpost set prefix=substring(prefix, 1, 38)+'" + lenHex + "'+substring(prefix, 40, 89) where id=25";
+                RunCommand(cmd);
+
+                cmd = "update valpost set existance=substring(existance, 1, " + fcLength.ToString() +
+                    ")+'" + fc + "'+ substring(existance, 1, (128-" + fcLength.ToString() + "-" +
+                    fc.Length.ToString() + ")) where id=" + (42).ToString();
+                RunCommand(cmd);
+            }
+            else
+            {
+                throw new Exception("Initialization error (0051).");
+            }
+        }
+
+        /// <summary>
+        /// Получить FailsCount из бд.
+        /// </summary>
+        /// <returns></returns>
+        public static string MdFiveGetFails()
+        {
+            string cmd = "select count(*) cnt from valpost";
+            int? cnt = RunCommandScalar<int>(cmd);
+            if (cnt != null && cnt == 0)
+            {
+                return String.Empty;
+            }
+
+            int fcLength = 0;
+            int len = 0;
+            List<String> sList = new List<string>();
+            cmd = "select substring(prefix,39,1) res from valpost where id=25";
+            if (RunScriptResList(cmd, out sList) == 1)
+            {
+                len = int.Parse(sList[0], System.Globalization.NumberStyles.HexNumber);
+                fcLength = len - 3;
+            }
+
+            cmd = "select substring(existance," + (fcLength + 1).ToString() +
+                    "," + (fcLength * 4).ToString() +
+                    ") res from valpost where id=" + (42).ToString();
+            if (RunScriptResList(cmd, out sList) == 1)
+            {
+                return sList[0];
+            }
+
+            return String.Empty;
         }
         #endif
     }

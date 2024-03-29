@@ -15,6 +15,9 @@ namespace SRWords
             try
             {
                 List<ScanWord.ChangeInfo> info = GetChangesList();
+                if (info == null)
+                    return;
+
                 Debug.WriteLine("Получены изменения с сервера: " + info.Count.ToString());
 
                 if (info.Count > 0)
@@ -25,7 +28,7 @@ namespace SRWords
             }
             catch (Exception ex)
             {
-                // TODO: проверять, есть ли интернет
+                // нет соединения с сервером
                 Debug.WriteLine(ex.StackTrace);
             }
         }
