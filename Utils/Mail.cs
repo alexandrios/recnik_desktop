@@ -17,8 +17,10 @@ namespace SRWords
 
             // кому отправляем
             //MailAddress to = new MailAddress("alexandrios273@gmail.com");
-            //MailAddress to = new MailAddress("peju@mail.ru");
             MailAddress to = new MailAddress("alex27@mail.ru");
+
+            string login = SerialNum.GetLogin();
+            string email = SerialNum.GetEmail();
 
             // создаем объект сообщения
             MailMessage m = new MailMessage(from, to)
@@ -27,7 +29,7 @@ namespace SRWords
                 Subject = "Тест",
 
                 // текст письма
-                Body = "<h2>Письмо-тест работы smtp-клиента</h2><p>Здравствуйте! Ваша заявка принята.",
+                Body = "<h2>Recnik Desktop</h2>" + String.Format("login: {0}<br/>email: {1}", login, email),
 
                 // письмо представляет код html
                 IsBodyHtml = true

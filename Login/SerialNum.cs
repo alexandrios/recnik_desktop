@@ -11,6 +11,7 @@ using System.Management;
 using System.IO;
 using System.Security.Cryptography;
 using System.Net;
+using System.Globalization;
 
 namespace SRWords
 {
@@ -638,7 +639,7 @@ namespace SRWords
                 int.TryParse(donation[0].donate, out donate);
                 if (donate > 0)
                 {
-                    // Записать донат в бд (в другом зашифрованном виде)
+                    // Записать донат в бд
                     SaveDonate(donate.ToString());
 
                     // Сгенерировать ключ и сохранить его в бд
@@ -648,8 +649,7 @@ namespace SRWords
                     SaveFails("0");
 
                     // при первом выполнении этого условия сказать СПАСИБО
-                    MessageBox.Show("Спасибо за Ваш донат!" + Environment.NewLine + "Приятной работы со словарем!", 
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Спасибо за Ваш донат. Приятной работы!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return DonateResult.OK;
                 }
@@ -657,8 +657,29 @@ namespace SRWords
                 {
                     DateTime date = DateTime.ParseExact(donation[0].date, "yyyy-MM-dd HH:mm:ss",
                                        System.Globalization.CultureInfo.InvariantCulture);
-                    string note = donation[0].note;
-                    int interval = Convert.ToInt32(Math.Floor((DateTime.Now - date).TotalDays));
+                    
+                    // Не используется 
+                    // string note = donation[0].note;
+
+                    // TODO: Подумать, можно ли безопасно использовать это время
+                    DateTime currentTime;
+                    try
+                    {
+                        using (var response =
+                          WebRequest.Create("http://www.google.com").GetResponse())
+                            //string todaysDates =  response.Headers["date"];
+                            currentTime = DateTime.ParseExact(response.Headers["date"],
+                                "ddd, dd MMM yyyy HH:mm:ss 'GMT'",
+                                CultureInfo.InvariantCulture.DateTimeFormat,
+                                DateTimeStyles.AssumeUniversal);
+                    }
+                    catch (WebException)
+                    {
+                        currentTime = DateTime.Now;
+                    }
+
+
+                    int interval = Convert.ToInt32(Math.Floor((currentTime - date).TotalDays));
 
                     if (interval <= MAX_DONATE_INTERVAL)
                     {
@@ -689,6 +710,11 @@ namespace SRWords
             }
 
             result = SplitWidthOrientation(result).ToLower();
+        }
+
+        public static void SaveKey(string key)
+        {
+            ADSData.MdFiveSetKey(key);
         }
 
         public enum DonateResult

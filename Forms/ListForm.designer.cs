@@ -58,6 +58,8 @@
             this._dictDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._dictBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._donatePanel = new System.Windows.Forms.Panel();
+            this._askDonateLabel = new System.Windows.Forms.Label();
             this._webBrowser = new System.Windows.Forms.WebBrowser();
             this._wbContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.wbBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,8 +122,6 @@
             this._langRightLabel = new System.Windows.Forms.Label();
             this._langLeftLabel = new System.Windows.Forms.Label();
             this._switchPictureBox = new System.Windows.Forms.PictureBox();
-            this._donatePanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -135,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._rusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._dictDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._dictBindingSource)).BeginInit();
+            this._donatePanel.SuspendLayout();
             this._wbContextMenuStrip.SuspendLayout();
             this._toolStrip.SuspendLayout();
             this._mainMenuStrip.SuspendLayout();
@@ -143,7 +144,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this._panelReverse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._switchPictureBox)).BeginInit();
-            this._donatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _wordsDataGridView
@@ -497,6 +497,28 @@
             // _dictBindingSource
             // 
             this._dictBindingSource.PositionChanged += new System.EventHandler(this._srbBindingSource_PositionChanged);
+            // 
+            // _donatePanel
+            // 
+            this._donatePanel.Controls.Add(this._askDonateLabel);
+            this._donatePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this._donatePanel.Location = new System.Drawing.Point(0, 0);
+            this._donatePanel.Name = "_donatePanel";
+            this._donatePanel.Size = new System.Drawing.Size(322, 70);
+            this._donatePanel.TabIndex = 1;
+            // 
+            // _askDonateLabel
+            // 
+            this._askDonateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._askDonateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._askDonateLabel.ForeColor = System.Drawing.Color.Red;
+            this._askDonateLabel.Location = new System.Drawing.Point(0, 0);
+            this._askDonateLabel.Name = "_askDonateLabel";
+            this._askDonateLabel.Size = new System.Drawing.Size(322, 69);
+            this._askDonateLabel.TabIndex = 0;
+            this._askDonateLabel.Text = "Для завершения регистрации, пожалуйста, сделайте донат!";
+            this._askDonateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _webBrowser
             // 
@@ -1038,26 +1060,6 @@
             this._switchPictureBox.TabStop = false;
             this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
             // 
-            // _donatePanel
-            // 
-            this._donatePanel.Controls.Add(this.label1);
-            this._donatePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this._donatePanel.Location = new System.Drawing.Point(0, 0);
-            this._donatePanel.Name = "_donatePanel";
-            this._donatePanel.Size = new System.Drawing.Size(322, 70);
-            this._donatePanel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(74, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Сделайте донат!";
-            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,6 +1099,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._rusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dictDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dictBindingSource)).EndInit();
+            this._donatePanel.ResumeLayout(false);
             this._wbContextMenuStrip.ResumeLayout(false);
             this._toolStrip.ResumeLayout(false);
             this._toolStrip.PerformLayout();
@@ -1107,8 +1110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this._panelReverse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._switchPictureBox)).EndInit();
-            this._donatePanel.ResumeLayout(false);
-            this._donatePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1205,6 +1206,6 @@
         private System.Windows.Forms.Label _langRightLabel;
         private System.Windows.Forms.Label _langLeftLabel;
         private System.Windows.Forms.Panel _donatePanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label _askDonateLabel;
     }
 }

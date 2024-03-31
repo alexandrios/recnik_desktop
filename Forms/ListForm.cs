@@ -341,7 +341,7 @@ namespace SRWords
                         _oldContextMenuStrip.Font = font;
 
 
-                        /* TODO: Изменить высоту ячейки грида!
+                        /* Изменить высоту ячейки грида!
                         float int_old_ListFontSize = float.Parse(old_ListFontSize);
                         float int_new_ListFontSize = float.Parse(Setup_ListFontSize);
                         _wordsDataGridView.RowTemplate.Height = (int)(22f / 16f * int_new_ListFontSize);
@@ -368,7 +368,7 @@ namespace SRWords
                     ApplyDictParameters();
 
                     ///*
-                    //TODO: Изменить высоту ячейки грида!
+                    // Изменить высоту ячейки грида!
                     if (old_ListFontSize != Setup_ListFontSize)
                     {
                         object ds = _wordsDataGridView.DataSource;
@@ -1779,7 +1779,7 @@ namespace SRWords
         {
             SplashForm3 form = new SplashForm3();
             form.FormBorderStyle = FormBorderStyle.FixedSingle;
-            form.SetStatusInfo();
+            form.SetStatusInfo(IsDonated);
             form.ShowDialog();
         }
 
@@ -2148,7 +2148,7 @@ namespace SRWords
                 return;
             }
 
-            // TODO 2023
+            // 2023
             /*
             if (Data.IsWordInUserDict(currDictId, currWord.Id))
             {
@@ -2184,7 +2184,7 @@ namespace SRWords
                             Data.GetNameForDict(currDictId) + "]?", "Внимание!",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        //TODO 2023
+                        // 2023
                         //Data.DelFromUserDict(currDictId, currWord.Id);
 
                         // Удалить слово из истории

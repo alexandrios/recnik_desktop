@@ -1573,7 +1573,6 @@ namespace SRWords.Articles
         /// <returns></returns>
         private string GetRoot(string wordName)
         {
-            //TODO
             // Сначала убрать ударения из wordName!
             wordName = Accent.RemoveAccents(wordName);
 

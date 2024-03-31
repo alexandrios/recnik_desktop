@@ -63,11 +63,14 @@ namespace SRWords
 			this.SetStyle(ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 		}
 
-		public void SetStatusInfo()
+		public void SetStatusInfo(bool isDonated)
 		{
 #if DEMO
 #else
-			m_sStatus = "Зарегистрированный пользователь: " + SerialNum.GetLogin();
+			if (isDonated)
+				m_sStatus = "Зарегистрированный пользователь: " + SerialNum.GetLogin();
+			else
+				m_sStatus = SerialNum.GetLogin() + ", пожалуйста, сделайте донат!";
 #endif
 		}
 

@@ -28,251 +28,208 @@ namespace SRWords
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitOnlineForm));
-            this._panel = new System.Windows.Forms.Panel();
-            this._loginGroupBox = new System.Windows.Forms.GroupBox();
+            this._imageList = new System.Windows.Forms.ImageList(this.components);
+            this._checkKeyButton = new System.Windows.Forms.Button();
+            this._keyLabel = new System.Windows.Forms.Label();
+            this._keyTextBox = new System.Windows.Forms.TextBox();
+            this._emailInfoButton = new System.Windows.Forms.Button();
+            this._loginInfoButton = new System.Windows.Forms.Button();
             this._loginTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this._loginLabel = new System.Windows.Forms.Label();
             this._registrationButton = new System.Windows.Forms.Button();
             this._emailLabel = new System.Windows.Forms.Label();
             this._emailTextBox = new System.Windows.Forms.TextBox();
-            this._keyGroupBox = new System.Windows.Forms.GroupBox();
-            this._keyLabel = new System.Windows.Forms.Label();
-            this._checkKeyButton = new System.Windows.Forms.Button();
-            this._keyTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this._codeTextBox = new System.Windows.Forms.TextBox();
-            this._codeLabel = new System.Windows.Forms.Label();
-            this._cancelButton = new System.Windows.Forms.Button();
-            this._infoTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this._panel = new System.Windows.Forms.Panel();
+            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this._keyPanel = new System.Windows.Forms.Panel();
+            this._loginPanel = new System.Windows.Forms.Panel();
             this._panel.SuspendLayout();
-            this._loginGroupBox.SuspendLayout();
-            this._keyGroupBox.SuspendLayout();
+            this._keyPanel.SuspendLayout();
+            this._loginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _panel
+            // _imageList
             // 
-            this._panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._panel.BackColor = System.Drawing.SystemColors.Control;
-            this._panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._panel.Controls.Add(this._loginGroupBox);
-            this._panel.Controls.Add(this._keyGroupBox);
-            this._panel.Location = new System.Drawing.Point(11, 12);
-            this._panel.Name = "_panel";
-            this._panel.Size = new System.Drawing.Size(517, 227);
-            this._panel.TabIndex = 0;
+            this._imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageList.ImageStream")));
+            this._imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this._imageList.Images.SetKeyName(0, "1396823_circle_info_information_letter_icon.png");
             // 
-            // _loginGroupBox
+            // _checkKeyButton
             // 
-            this._loginGroupBox.Controls.Add(this._loginTextBox);
-            this._loginGroupBox.Controls.Add(this.label2);
-            this._loginGroupBox.Controls.Add(this._loginLabel);
-            this._loginGroupBox.Controls.Add(this._registrationButton);
-            this._loginGroupBox.Controls.Add(this._emailLabel);
-            this._loginGroupBox.Controls.Add(this._emailTextBox);
-            this._loginGroupBox.Location = new System.Drawing.Point(6, 3);
-            this._loginGroupBox.Name = "_loginGroupBox";
-            this._loginGroupBox.Size = new System.Drawing.Size(509, 114);
-            this._loginGroupBox.TabIndex = 16;
-            this._loginGroupBox.TabStop = false;
-            // 
-            // _loginTextBox
-            // 
-            this._loginTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._loginTextBox.Location = new System.Drawing.Point(164, 54);
-            this._loginTextBox.Name = "_loginTextBox";
-            this._loginTextBox.Size = new System.Drawing.Size(236, 20);
-            this._loginTextBox.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(366, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "ВНИМАНИЕ! Для регистрациии необходимо подключение к интернету";
-            // 
-            // _loginLabel
-            // 
-            this._loginLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._loginLabel.AutoSize = true;
-            this._loginLabel.Location = new System.Drawing.Point(6, 57);
-            this._loginLabel.Name = "_loginLabel";
-            this._loginLabel.Size = new System.Drawing.Size(150, 13);
-            this._loginLabel.TabIndex = 2;
-            this._loginLabel.Text = "Логин (от 5 до 10 символов)";
-            // 
-            // _registrationButton
-            // 
-            this._registrationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._registrationButton.Location = new System.Drawing.Point(410, 53);
-            this._registrationButton.Name = "_registrationButton";
-            this._registrationButton.Size = new System.Drawing.Size(87, 23);
-            this._registrationButton.TabIndex = 4;
-            this._registrationButton.Text = "Регистрация";
-            this._registrationButton.UseVisualStyleBackColor = true;
-            this._registrationButton.Click += new System.EventHandler(this._registrationButton_Click);
-            // 
-            // _emailLabel
-            // 
-            this._emailLabel.AutoSize = true;
-            this._emailLabel.Location = new System.Drawing.Point(6, 28);
-            this._emailLabel.Name = "_emailLabel";
-            this._emailLabel.Size = new System.Drawing.Size(55, 13);
-            this._emailLabel.TabIndex = 0;
-            this._emailLabel.Text = "Ваш email";
-            // 
-            // _emailTextBox
-            // 
-            this._emailTextBox.Location = new System.Drawing.Point(67, 25);
-            this._emailTextBox.Name = "_emailTextBox";
-            this._emailTextBox.Size = new System.Drawing.Size(333, 20);
-            this._emailTextBox.TabIndex = 1;
-            // 
-            // _keyGroupBox
-            // 
-            this._keyGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._keyGroupBox.Controls.Add(this._keyLabel);
-            this._keyGroupBox.Controls.Add(this._checkKeyButton);
-            this._keyGroupBox.Controls.Add(this._keyTextBox);
-            this._keyGroupBox.Location = new System.Drawing.Point(6, 131);
-            this._keyGroupBox.Name = "_keyGroupBox";
-            this._keyGroupBox.Size = new System.Drawing.Size(509, 80);
-            this._keyGroupBox.TabIndex = 7;
-            this._keyGroupBox.TabStop = false;
+            this._checkKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._checkKeyButton.BackColor = System.Drawing.Color.SteelBlue;
+            this._checkKeyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._checkKeyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._checkKeyButton.ForeColor = System.Drawing.Color.White;
+            this._checkKeyButton.Location = new System.Drawing.Point(129, 103);
+            this._checkKeyButton.Name = "_checkKeyButton";
+            this._checkKeyButton.Size = new System.Drawing.Size(138, 33);
+            this._checkKeyButton.TabIndex = 3;
+            this._checkKeyButton.Text = "Проверка ключа";
+            this._checkKeyButton.UseVisualStyleBackColor = false;
+            this._checkKeyButton.Click += new System.EventHandler(this._checkKeyButton_Click);
             // 
             // _keyLabel
             // 
             this._keyLabel.AutoSize = true;
-            this._keyLabel.Location = new System.Drawing.Point(6, 21);
+            this._keyLabel.Location = new System.Drawing.Point(5, 27);
             this._keyLabel.Name = "_keyLabel";
             this._keyLabel.Size = new System.Drawing.Size(33, 13);
             this._keyLabel.TabIndex = 0;
             this._keyLabel.Text = "Ключ";
             // 
-            // _checkKeyButton
-            // 
-            this._checkKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._checkKeyButton.Location = new System.Drawing.Point(366, 44);
-            this._checkKeyButton.Name = "_checkKeyButton";
-            this._checkKeyButton.Size = new System.Drawing.Size(109, 23);
-            this._checkKeyButton.TabIndex = 9;
-            this._checkKeyButton.Text = "Проверить ключ";
-            this._checkKeyButton.UseVisualStyleBackColor = true;
-            this._checkKeyButton.Click += new System.EventHandler(this._checkKeyButton_Click);
-            // 
             // _keyTextBox
             // 
             this._keyTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this._keyTextBox.Location = new System.Drawing.Point(53, 18);
+            this._keyTextBox.Location = new System.Drawing.Point(53, 24);
             this._keyTextBox.Name = "_keyTextBox";
-            this._keyTextBox.Size = new System.Drawing.Size(422, 20);
+            this._keyTextBox.Size = new System.Drawing.Size(327, 20);
             this._keyTextBox.TabIndex = 1;
             // 
-            // label1
+            // _emailInfoButton
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(231, 288);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "---";
+            this._emailInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this._emailInfoButton.FlatAppearance.BorderSize = 0;
+            this._emailInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this._emailInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this._emailInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._emailInfoButton.ImageKey = "1396823_circle_info_information_letter_icon.png";
+            this._emailInfoButton.ImageList = this._imageList;
+            this._emailInfoButton.Location = new System.Drawing.Point(355, 58);
+            this._emailInfoButton.Name = "_emailInfoButton";
+            this._emailInfoButton.Size = new System.Drawing.Size(23, 23);
+            this._emailInfoButton.TabIndex = 5;
+            this._emailInfoButton.TabStop = false;
+            this._toolTip.SetToolTip(this._emailInfoButton, "Необходимо ввести действующий E-mail адрес.");
+            this._emailInfoButton.UseVisualStyleBackColor = false;
+            this._emailInfoButton.Click += new System.EventHandler(this._emailInfoButton_Click);
             // 
-            // textBox1
+            // _loginInfoButton
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(155, 285);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(70, 20);
-            this.textBox1.TabIndex = 12;
+            this._loginInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this._loginInfoButton.FlatAppearance.BorderSize = 0;
+            this._loginInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this._loginInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this._loginInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._loginInfoButton.ImageKey = "1396823_circle_info_information_letter_icon.png";
+            this._loginInfoButton.ImageList = this._imageList;
+            this._loginInfoButton.Location = new System.Drawing.Point(355, 24);
+            this._loginInfoButton.Name = "_loginInfoButton";
+            this._loginInfoButton.Size = new System.Drawing.Size(23, 23);
+            this._loginInfoButton.TabIndex = 2;
+            this._loginInfoButton.TabStop = false;
+            this._toolTip.SetToolTip(this._loginInfoButton, "Длина логина должна быть от 5 до 10 символов.\r\nРазрешены латинские буквы, цифры и" +
+        " знак подчеркивания.");
+            this._loginInfoButton.UseVisualStyleBackColor = false;
+            this._loginInfoButton.Click += new System.EventHandler(this._loginInfoButton_Click);
             // 
-            // button2
+            // _loginTextBox
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(80, 283);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Прочитать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this._loginTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this._loginTextBox.Location = new System.Drawing.Point(196, 24);
+            this._loginTextBox.Name = "_loginTextBox";
+            this._loginTextBox.Size = new System.Drawing.Size(153, 20);
+            this._loginTextBox.TabIndex = 1;
+            this._loginTextBox.Leave += new System.EventHandler(this._loginTextBox_Leave);
             // 
-            // button1
+            // _loginLabel
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(11, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Записать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this._loginLabel.AutoSize = true;
+            this._loginLabel.Location = new System.Drawing.Point(4, 27);
+            this._loginLabel.Name = "_loginLabel";
+            this._loginLabel.Size = new System.Drawing.Size(150, 13);
+            this._loginLabel.TabIndex = 0;
+            this._loginLabel.Text = "Логин (от 5 до 10 символов)";
             // 
-            // _codeTextBox
+            // _registrationButton
             // 
-            this._codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._codeTextBox.Location = new System.Drawing.Point(171, 245);
-            this._codeTextBox.Name = "_codeTextBox";
-            this._codeTextBox.ReadOnly = true;
-            this._codeTextBox.Size = new System.Drawing.Size(333, 20);
-            this._codeTextBox.TabIndex = 6;
+            this._registrationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._registrationButton.BackColor = System.Drawing.Color.SteelBlue;
+            this._registrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._registrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._registrationButton.ForeColor = System.Drawing.Color.White;
+            this._registrationButton.Location = new System.Drawing.Point(128, 103);
+            this._registrationButton.Name = "_registrationButton";
+            this._registrationButton.Size = new System.Drawing.Size(138, 33);
+            this._registrationButton.TabIndex = 6;
+            this._registrationButton.Text = "Регистрация";
+            this._registrationButton.UseVisualStyleBackColor = false;
+            this._registrationButton.Click += new System.EventHandler(this._registrationButton_Click);
             // 
-            // _codeLabel
+            // _emailLabel
             // 
-            this._codeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._codeLabel.AutoSize = true;
-            this._codeLabel.Location = new System.Drawing.Point(13, 248);
-            this._codeLabel.Name = "_codeLabel";
-            this._codeLabel.Size = new System.Drawing.Size(104, 13);
-            this._codeLabel.TabIndex = 5;
-            this._codeLabel.Text = "Персональный код";
+            this._emailLabel.AutoSize = true;
+            this._emailLabel.Location = new System.Drawing.Point(4, 61);
+            this._emailLabel.Name = "_emailLabel";
+            this._emailLabel.Size = new System.Drawing.Size(35, 13);
+            this._emailLabel.TabIndex = 3;
+            this._emailLabel.Text = "E-mail";
             // 
-            // _cancelButton
+            // _emailTextBox
             // 
-            this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._cancelButton.Location = new System.Drawing.Point(453, 453);
-            this._cancelButton.Name = "_cancelButton";
-            this._cancelButton.Size = new System.Drawing.Size(75, 23);
-            this._cancelButton.TabIndex = 2;
-            this._cancelButton.Text = "Закрыть";
-            this._cancelButton.UseVisualStyleBackColor = true;
-            this._cancelButton.Click += new System.EventHandler(this._cancelButton_Click);
+            this._emailTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this._emailTextBox.Location = new System.Drawing.Point(56, 58);
+            this._emailTextBox.Name = "_emailTextBox";
+            this._emailTextBox.Size = new System.Drawing.Size(293, 20);
+            this._emailTextBox.TabIndex = 4;
             // 
-            // _infoTextBox
+            // label2
             // 
-            this._infoTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this._infoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this._infoTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this._infoTextBox.Location = new System.Drawing.Point(11, 374);
-            this._infoTextBox.Multiline = true;
-            this._infoTextBox.Name = "_infoTextBox";
-            this._infoTextBox.ReadOnly = true;
-            this._infoTextBox.Size = new System.Drawing.Size(425, 102);
-            this._infoTextBox.TabIndex = 1;
-            this._infoTextBox.Text = resources.GetString("_infoTextBox.Text");
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Location = new System.Drawing.Point(42, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(336, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Для успешной регистрациии необходим интернет!";
+            // 
+            // _panel
+            // 
+            this._panel.BackColor = System.Drawing.Color.White;
+            this._panel.Controls.Add(this._loginPanel);
+            this._panel.Controls.Add(this.label2);
+            this._panel.Location = new System.Drawing.Point(0, 0);
+            this._panel.Name = "_panel";
+            this._panel.Size = new System.Drawing.Size(415, 204);
+            this._panel.TabIndex = 0;
+            // 
+            // _keyPanel
+            // 
+            this._keyPanel.BackColor = System.Drawing.Color.White;
+            this._keyPanel.Controls.Add(this._checkKeyButton);
+            this._keyPanel.Controls.Add(this._keyLabel);
+            this._keyPanel.Controls.Add(this._keyTextBox);
+            this._keyPanel.Location = new System.Drawing.Point(14, 36);
+            this._keyPanel.Name = "_keyPanel";
+            this._keyPanel.Size = new System.Drawing.Size(386, 151);
+            this._keyPanel.TabIndex = 1;
+            // 
+            // _loginPanel
+            // 
+            this._loginPanel.Controls.Add(this._emailInfoButton);
+            this._loginPanel.Controls.Add(this._registrationButton);
+            this._loginPanel.Controls.Add(this._emailLabel);
+            this._loginPanel.Controls.Add(this._loginInfoButton);
+            this._loginPanel.Controls.Add(this._emailTextBox);
+            this._loginPanel.Controls.Add(this._loginLabel);
+            this._loginPanel.Controls.Add(this._loginTextBox);
+            this._loginPanel.Location = new System.Drawing.Point(14, 36);
+            this._loginPanel.Name = "_loginPanel";
+            this._loginPanel.Size = new System.Drawing.Size(386, 151);
+            this._loginPanel.TabIndex = 1;
             // 
             // InitOnlineForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(539, 483);
-            this.Controls.Add(this._infoTextBox);
-            this.Controls.Add(this._cancelButton);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(415, 204);
+            this.Controls.Add(this._keyPanel);
             this.Controls.Add(this._panel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this._codeTextBox);
-            this.Controls.Add(this._codeLabel);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -281,38 +238,32 @@ namespace SRWords
             this.Name = "InitOnlineForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
-            this.Load += new System.EventHandler(this.InitOnlineForm_Load);
             this._panel.ResumeLayout(false);
-            this._loginGroupBox.ResumeLayout(false);
-            this._loginGroupBox.PerformLayout();
-            this._keyGroupBox.ResumeLayout(false);
-            this._keyGroupBox.PerformLayout();
+            this._panel.PerformLayout();
+            this._keyPanel.ResumeLayout(false);
+            this._keyPanel.PerformLayout();
+            this._loginPanel.ResumeLayout(false);
+            this._loginPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel _panel;
+        private System.Windows.Forms.TextBox _keyTextBox;
+        private System.Windows.Forms.Label _keyLabel;
+        private System.Windows.Forms.ImageList _imageList;
+        private System.Windows.Forms.Button _emailInfoButton;
+        private System.Windows.Forms.Button _loginInfoButton;
         private System.Windows.Forms.TextBox _loginTextBox;
         private System.Windows.Forms.Label _loginLabel;
-        private System.Windows.Forms.Label _codeLabel;
-        private System.Windows.Forms.TextBox _codeTextBox;
-        private System.Windows.Forms.Button _cancelButton;
-        private System.Windows.Forms.TextBox _keyTextBox;
-        private System.Windows.Forms.GroupBox _keyGroupBox;
-        private System.Windows.Forms.Label _keyLabel;
-        private System.Windows.Forms.Button _checkKeyButton;
-        private System.Windows.Forms.TextBox _infoTextBox;
-        private System.Windows.Forms.TextBox _emailTextBox;
-        private System.Windows.Forms.Label _emailLabel;
         private System.Windows.Forms.Button _registrationButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label _emailLabel;
+        private System.Windows.Forms.TextBox _emailTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox _loginGroupBox;
+        private System.Windows.Forms.Panel _panel;
+        private System.Windows.Forms.Button _checkKeyButton;
+        private System.Windows.Forms.ToolTip _toolTip;
+        private System.Windows.Forms.Panel _loginPanel;
+        private System.Windows.Forms.Panel _keyPanel;
     }
 }

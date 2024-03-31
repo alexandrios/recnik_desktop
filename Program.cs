@@ -40,7 +40,12 @@ namespace SRWords
 
 
 
-         //Application.Run(new InitOnlineForm());
+            //Application.Run(new InitOnlineForm());
+            //SerialNum.SaveFails("10");
+            
+            //
+            //SerialNum.SaveKey("ababababababababababababababababababababababababababab");
+            //string storedKey = ADSData.MdFiveGetKey();
 
 
             if (String.IsNullOrEmpty(SerialNum.GetLogin()) || String.IsNullOrEmpty(SerialNum.GetEmail()))
