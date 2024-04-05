@@ -140,6 +140,19 @@ namespace SRWords
 
             return result;
         }
+
+
+        // Помощь
+        private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string workDir = ScanWord.Utils.GetWorkDirectory();
+            if (File.Exists(workDir + "SRWords.pdf"))
+                Help.ShowHelp(this, "SRWords.pdf");
+            else
+                MessageBox.Show("Не найден файл справки.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
         */
 
     }

@@ -1030,8 +1030,8 @@ namespace SRWords
 
         private void ListForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
-                referenceToolStripMenuItem.PerformClick();
+            //if (e.KeyCode == Keys.F1)
+            //    referenceToolStripMenuItem.PerformClick();
 
             if (e.KeyCode == Keys.Insert)
                 //if (currTableName == "words")
@@ -1851,6 +1851,7 @@ namespace SRWords
             _searchTextBox.Focus();
         }
 
+        /*
         private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string workDir = ScanWord.Utils.GetWorkDirectory();
@@ -1859,6 +1860,7 @@ namespace SRWords
             else
                 MessageBox.Show("Не найден файл справки.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        */
 
         private void cyrToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2551,6 +2553,13 @@ namespace SRWords
 
                         // Показать статью
                         element.Style = "display:block";
+
+                        HtmlElement image = doc.GetElementById(Const.IMG_EXPAND_PREFIX + Utils.CyrToLat(s).Replace(" ", "_"));
+                        if (image != null)
+                        {
+                            image.SetAttribute("src", Utils.GetWorkDirectory() + Const.IMG_EXPAND_LESS);
+                            image.SetAttribute("alt", Const.HIDE_ITEM);
+                        }
                     }
                 }
             }
@@ -2580,6 +2589,13 @@ namespace SRWords
                     // Скрыть статью
                     element.Style = "display:none";
                     multiRusValuesOpened = false;
+
+                    HtmlElement image = doc.GetElementById(Const.IMG_EXPAND_PREFIX + Utils.CyrToLat(s).Replace(" ", "_"));
+                    if (image != null)
+                    {
+                        image.SetAttribute("src", Utils.GetWorkDirectory() + Const.IMG_EXPAND_MORE);
+                        image.SetAttribute("alt", Const.SHOW_ITEM);
+                    }
                 }
             }
         }
@@ -2685,5 +2701,6 @@ namespace SRWords
         {
             Mail.SendMail();
         }
+
     }
 }

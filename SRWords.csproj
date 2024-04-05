@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Const.cs" />
     <Compile Include="Data\ADSData.cs" />
     <Compile Include="Articles\Accent.cs" />
     <Compile Include="Articles\ArticleInfo.cs" />

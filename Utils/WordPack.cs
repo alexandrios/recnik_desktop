@@ -25,6 +25,7 @@ namespace SRWords
 
         private readonly string Setup_SrbAlphabet;
         private readonly string Setup_RusAccent;
+
         // Признак, показывать ли статьи сербских переводов русского слова или показывать только переводы (в русско-сербском словаре)
         private readonly bool multiRusValuesOpened = true; //false;
 
@@ -100,7 +101,7 @@ namespace SRWords
         private void GetRusWord(DataRowView dr)
         {
             //string img = "gobyref.png";
-            string img = "search_icon.png";
+            //string img = "search_icon.png";
 
             this.ReverseWord = dr["SRBNAME"].ToString();
             string srbname = this.ReverseWord;
@@ -120,11 +121,17 @@ namespace SRWords
             int numId = 1;
             int cnt = aList.Count;
             string display = cnt == 1 ? "block" : multiRusValuesOpened ? "block" : "none";
+            string expImg = Utils.GetWorkDirectory() + (display == "block" ? Const.IMG_EXPAND_LESS : Const.IMG_EXPAND_MORE);
+            string altImg = display == "block" ? Const.HIDE_ITEM : Const.SHOW_ITEM;
             string nameId;
+            string expId;
 
             foreach (string s in aList)
             {
                 nameId = s.Replace(" ", "_");
+                expId = Const.IMG_EXPAND_PREFIX + Utils.CyrToLat(s).Replace(" ", "_");
+
+                /*
                 t += "<a href=\"^" + s + "\" class=\"OpenHide\" " +
                      "style=\"color:black; font:normal 16px Arial;\" " +
                      //"onclick=\"facechange('#" + nameId + "'); return true;\">" +
@@ -132,10 +139,17 @@ namespace SRWords
                      //(Setup_SrbAlphabet == "lat" ? Utils.CyrToLat(s) : s) + 
                      "v" +
                      "</a>" +
-                     
-                    // "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    // "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
-                    // "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
+                */
+
+                t += "<a href=\"^" + s + "\" class=\"OpenHide\" " +
+                     "style=\"color:black; font:normal 16px Arial;\" onclick=\"viewdiv('" + nameId + "', '" + expId + "'); return true;\">" +
+                     "<img id=\"" + expId + "\" src =\"" + expImg + "\" alt=\"" + altImg + "\" border=\"0\" width=\"16\" height=\"16\">" +
+                     "</a>" +
+
+
+                     // "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
+                     // "<button type=\"button\" title=\"Найти слово в сербско-русском словаре\" " +
+                     // "onclick=\"location.href='~" + nameId + "'\" class=\"Button1\">Найти</button>" +
 
                      "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
 
@@ -228,6 +242,9 @@ namespace SRWords
 
         private string HTMLStartString()
         {
+            string path = Utils.GetWorkDirectory().Replace("\\", "/");
+            string expand_more = path + Const.IMG_EXPAND_MORE;
+            string expand_less = path + Const.IMG_EXPAND_LESS;
             return "<HTML><HEAD>" +
                    "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"" +
                    Utils.GetWorkDirectory() + Utils.CSS_FILE_NAME + "\">" + Environment.NewLine +
@@ -244,12 +261,15 @@ namespace SRWords
                     "$(objName).animate({height: 'hide'}, 0); " +
                      "} }" + 
                    */
-                   "function viewdiv(id) {" +
+                   "function viewdiv(id, img) {" +
                     "var el = document.getElementById(id);" +
+                    "var image = document.getElementById(img);" +
                     "if (el.style.display == \"block\") {" +
                     "el.style.display = \"none\";" +
+                    "image.src = \"" + expand_more + "\"; image.alt = \"" + Const.SHOW_ITEM + "\";" +
                     "} else {" +
                     "el.style.display = \"block\";" +
+                    "image.src = \"" + expand_less + "\"; image.alt = \"" + Const.HIDE_ITEM + "\";" +
                     "}}" +
                     "</script>" + Environment.NewLine +
 
