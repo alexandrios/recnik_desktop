@@ -418,6 +418,16 @@ namespace SRWords
         }
 
         /// <summary>
+        /// Поместить слово в пользовательский словарь. С 2024 года.
+        /// </summary>
+        public static void AddInUserDict(int idDict, string name)
+        {
+            string cmd = "insert into dict (IDDICT, NAME) " +
+                "Values(" + idDict.ToString() + ", '" + name + "')";
+            ADSData.RunCommand(cmd);
+        }
+
+        /// <summary>
         /// Удалить слово из пользовательского словаря.
         /// </summary>
         /// <param name="idDict"></param>
@@ -432,6 +442,17 @@ namespace SRWords
             ADSData.RunCommand(cmd);
 #endif
         }
+
+        /// <summary>
+        /// Удалить слово из пользовательского словаря. С 2024 года.
+        /// </summary>
+        public static void DelFromUserDict(int idDict, string name)
+        {
+            string cmd = "delete from dict where IDDICT=" + idDict.ToString() +
+                            " and NAME='" + name + "'";
+            ADSData.RunCommand(cmd);
+        }
+
         // Пользовательские словари -------------------------------------[END]
 
 
@@ -597,5 +618,6 @@ namespace SRWords
             return result;
         }
 
+ 
     }
 }

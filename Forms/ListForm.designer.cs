@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._gridContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -160,15 +160,15 @@
             this.NAME});
             this._wordsDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._wordsDataGridView.DataSource = this._srbBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this._wordsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._wordsDataGridView.EnableHeadersVisualStyles = false;
             this._wordsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -186,7 +186,7 @@
             this._wordsDataGridView.ShowCellToolTips = false;
             this._wordsDataGridView.ShowEditingIcon = false;
             this._wordsDataGridView.ShowRowErrors = false;
-            this._wordsDataGridView.Size = new System.Drawing.Size(152, 343);
+            this._wordsDataGridView.Size = new System.Drawing.Size(154, 345);
             this._wordsDataGridView.TabIndex = 0;
             this._wordsDataGridView.TabStop = false;
             this._wordsDataGridView.Enter += new System.EventHandler(this._wordsDataGridView_Enter);
@@ -308,7 +308,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this._splitContainer.BackColor = System.Drawing.Color.Transparent;
-            this._splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this._splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._splitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this._splitContainer.Location = new System.Drawing.Point(0, 24);
             this._splitContainer.Margin = new System.Windows.Forms.Padding(0);
@@ -340,10 +340,10 @@
             this._panelTextBox.Controls.Add(this._searchTextBox);
             this._panelTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this._panelTextBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this._panelTextBox.Location = new System.Drawing.Point(0, 344);
+            this._panelTextBox.Location = new System.Drawing.Point(0, 346);
             this._panelTextBox.Name = "_panelTextBox";
             this._panelTextBox.Padding = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this._panelTextBox.Size = new System.Drawing.Size(152, 26);
+            this._panelTextBox.Size = new System.Drawing.Size(154, 26);
             this._panelTextBox.TabIndex = 1;
             // 
             // _searchTextBox
@@ -355,7 +355,7 @@
             this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
             this._searchTextBox.MaxLength = 100;
             this._searchTextBox.Name = "_searchTextBox";
-            this._searchTextBox.Size = new System.Drawing.Size(139, 25);
+            this._searchTextBox.Size = new System.Drawing.Size(141, 25);
             this._searchTextBox.TabIndex = 1;
             this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
             this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
@@ -367,7 +367,7 @@
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
             this._panel.Name = "_panel";
-            this._panel.Size = new System.Drawing.Size(152, 370);
+            this._panel.Size = new System.Drawing.Size(154, 372);
             this._panel.TabIndex = 3;
             // 
             // _panelGrid
@@ -380,7 +380,7 @@
             this._panelGrid.Controls.Add(this._dictDataGridView);
             this._panelGrid.Location = new System.Drawing.Point(0, 0);
             this._panelGrid.Name = "_panelGrid";
-            this._panelGrid.Size = new System.Drawing.Size(152, 343);
+            this._panelGrid.Size = new System.Drawing.Size(154, 345);
             this._panelGrid.TabIndex = 2;
             // 
             // _rusDataGridView
@@ -399,15 +399,15 @@
             this.dataGridViewTextBoxColumn2});
             this._rusDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._rusDataGridView.DataSource = this._rusBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this._rusDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._rusDataGridView.Location = new System.Drawing.Point(0, 0);
             this._rusDataGridView.MultiSelect = false;
@@ -419,7 +419,7 @@
             this._rusDataGridView.ShowCellErrors = false;
             this._rusDataGridView.ShowEditingIcon = false;
             this._rusDataGridView.ShowRowErrors = false;
-            this._rusDataGridView.Size = new System.Drawing.Size(152, 343);
+            this._rusDataGridView.Size = new System.Drawing.Size(154, 345);
             this._rusDataGridView.TabIndex = 0;
             this._rusDataGridView.TabStop = false;
             this._rusDataGridView.Visible = false;
@@ -455,15 +455,15 @@
             this.dataGridViewTextBoxColumn1});
             this._dictDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._dictDataGridView.DataSource = this._dictBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._dictDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dictDataGridView.Location = new System.Drawing.Point(0, 0);
             this._dictDataGridView.MultiSelect = false;
@@ -476,7 +476,7 @@
             this._dictDataGridView.ShowCellToolTips = false;
             this._dictDataGridView.ShowEditingIcon = false;
             this._dictDataGridView.ShowRowErrors = false;
-            this._dictDataGridView.Size = new System.Drawing.Size(152, 343);
+            this._dictDataGridView.Size = new System.Drawing.Size(154, 345);
             this._dictDataGridView.TabIndex = 0;
             this._dictDataGridView.TabStop = false;
             this._dictDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._wordsDataGridView_CellFormatting);
@@ -502,7 +502,7 @@
             this._donatePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this._donatePanel.Location = new System.Drawing.Point(0, 0);
             this._donatePanel.Name = "_donatePanel";
-            this._donatePanel.Size = new System.Drawing.Size(322, 70);
+            this._donatePanel.Size = new System.Drawing.Size(324, 70);
             this._donatePanel.TabIndex = 1;
             // 
             // _askDonateLabel
@@ -513,7 +513,7 @@
             this._askDonateLabel.ForeColor = System.Drawing.Color.Red;
             this._askDonateLabel.Location = new System.Drawing.Point(0, 0);
             this._askDonateLabel.Name = "_askDonateLabel";
-            this._askDonateLabel.Size = new System.Drawing.Size(322, 69);
+            this._askDonateLabel.Size = new System.Drawing.Size(324, 69);
             this._askDonateLabel.TabIndex = 0;
             this._askDonateLabel.Text = "Для завершения регистрации, пожалуйста, сделайте донат!";
             this._askDonateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -527,7 +527,7 @@
             this._webBrowser.Location = new System.Drawing.Point(0, 72);
             this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this._webBrowser.Name = "_webBrowser";
-            this._webBrowser.Size = new System.Drawing.Size(322, 298);
+            this._webBrowser.Size = new System.Drawing.Size(324, 300);
             this._webBrowser.TabIndex = 0;
             this._webBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this._webBrowser_Navigated);
             this._webBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this._webBrowser_Navigating);
@@ -957,32 +957,32 @@
             this._wbRusHideAllToolStripMenuItem});
             this._wbRusContextMenuStrip.Name = "_wbContextMenuStrip";
             this._wbRusContextMenuStrip.ShowImageMargin = false;
-            this._wbRusContextMenuStrip.Size = new System.Drawing.Size(156, 98);
+            this._wbRusContextMenuStrip.Size = new System.Drawing.Size(118, 76);
             this._wbRusContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._wbRusContextMenuStrip_Opening);
             // 
             // _wbRusCopyToolStripMenuItem
             // 
             this._wbRusCopyToolStripMenuItem.Name = "_wbRusCopyToolStripMenuItem";
-            this._wbRusCopyToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this._wbRusCopyToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this._wbRusCopyToolStripMenuItem.Text = "Копировать";
             this._wbRusCopyToolStripMenuItem.Click += new System.EventHandler(this.wbCopyToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(152, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
             // 
             // _wbRusShowAllToolStripMenuItem
             // 
             this._wbRusShowAllToolStripMenuItem.Name = "_wbRusShowAllToolStripMenuItem";
-            this._wbRusShowAllToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this._wbRusShowAllToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this._wbRusShowAllToolStripMenuItem.Text = "Открыть все";
             this._wbRusShowAllToolStripMenuItem.Click += new System.EventHandler(this.wbShowAllToolStripMenuItem_Click);
             // 
             // _wbRusHideAllToolStripMenuItem
             // 
             this._wbRusHideAllToolStripMenuItem.Name = "_wbRusHideAllToolStripMenuItem";
-            this._wbRusHideAllToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this._wbRusHideAllToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this._wbRusHideAllToolStripMenuItem.Text = "Закрыть все";
             this._wbRusHideAllToolStripMenuItem.Click += new System.EventHandler(this.wbHideAllToolStripMenuItem_Click);
             // 

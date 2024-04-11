@@ -319,6 +319,8 @@ namespace SRWords
                     _dictDataGridView.Font = font;
                     _searchTextBox.Font = font;
                     _oldContextMenuStrip.Font = font;
+
+                    _wordsDataGridView.RowTemplate.Height = (int)font.GetHeight() + 4;
                 }       
                 else
                 {
@@ -2167,6 +2169,8 @@ namespace SRWords
                 Data.AddInUserDict(currDictId, currWord.Id);
             }
             */
+
+            Data.AddInUserDict(currDictId, currWord.Name);
         }
 
         private void mainClearHistToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2188,6 +2192,8 @@ namespace SRWords
                     {
                         // 2023
                         //Data.DelFromUserDict(currDictId, currWord.Id);
+
+                        Data.DelFromUserDict(currDictId, currWord.Name);
 
                         // Удалить слово из истории
                         oldWords.Delete(Setup_SrbAlphabet == "lat" ? Utils.LatToCyr(currWord.Name) : currWord.Name);
