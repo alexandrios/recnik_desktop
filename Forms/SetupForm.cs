@@ -14,7 +14,7 @@ namespace SRWords
         public int CurrentPage = -1;
         public string alphabetFromMenu = String.Empty;
 
-        private bool isChangedCss = false;
+        //private bool isChangedCss = false;
         private string dictMode = String.Empty;
 #if DEMO || SQLITE
         private Int64 dictEditId = -1;
@@ -34,7 +34,7 @@ namespace SRWords
             InitializeComponent();
             DialogResult = DialogResult.None;
             IsChanged = false;
-            isChangedCss = false;
+            //isChangedCss = false;
 
             SetFontsToComboBox();
         }
@@ -115,12 +115,12 @@ namespace SRWords
                 string confirmClose = Setup.ReadFromSetup(Setup.ConfirmClose);
                 if (String.IsNullOrEmpty(confirmClose))
                     confirmClose = "1";
-                _confirmCloseCheckBox.Checked = confirmClose == "1" ? true : false;
+                _confirmCloseCheckBox.Checked = confirmClose == "1";
 
                 string loadRusWhileStart = Setup.ReadFromSetup(Setup.LoadRusWhileStart);
                 if (String.IsNullOrEmpty(loadRusWhileStart))
                     loadRusWhileStart = "1";
-                _loadRusWhileStartCheckBox.Checked = loadRusWhileStart == "1" ? true : false;
+                _loadRusWhileStartCheckBox.Checked = loadRusWhileStart == "1";
                 //string opacitySyllable = Setup.ReadFromSetup(Setup.OpacitySyllable);
                 //if (String.IsNullOrEmpty(opacitySyllable))
                 //    opacitySyllable = "90";
@@ -567,8 +567,8 @@ namespace SRWords
             _colorDialog.Color = (sender as Button).BackColor;
             if (_colorDialog.ShowDialog() == DialogResult.OK)
             {
-                if ((sender as Button).BackColor != _colorDialog.Color)
-                    isChangedCss = true;
+                //if ((sender as Button).BackColor != _colorDialog.Color)
+                //    isChangedCss = true;
 
                 (sender as Button).BackColor = _colorDialog.Color;   
             }

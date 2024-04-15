@@ -118,12 +118,6 @@ namespace SRWords
 
             RestoreFormProperties();
 
-            if (!isAdmin)
-            {
-                gridAOWToolStripMenuItem.Visible = false;
-                gridAOWToolStripSeparator.Visible = false;
-            }
-
             // Отключить контекстное меню браузера 
             _webBrowser.IsWebBrowserContextMenuEnabled = false;
 
@@ -686,14 +680,16 @@ namespace SRWords
         {
             if (tableName == "words" || tableName == "dict")
             {
-                foreach (ToolStripItem item in findToolStripMenuItem.DropDownItems)
-                    item.Enabled = true;
+                //foreach (ToolStripItem item in findToolStripMenuItem.DropDownItems)
+                //    item.Enabled = true;
 
                 _backToolStripSplitButton.Enabled = true;
                 _searchByLetterToolStripButton.Enabled = true;
 
                 if (tableName == "words")
                 {
+                    mainFindByLetterToolStripMenuItem.Visible = true;
+                    toolStripSeparator3.Visible = true;
                     mainSaveToUserDictToolStripMenuItem.Visible = true;
                     gridSaveToUserDictToolStripMenuItem.Visible = true;
                     wbSaveToUserDictToolStripMenuItem.Visible = true;
@@ -715,14 +711,12 @@ namespace SRWords
             }
             else if (tableName == "rus")
             {
-                foreach (ToolStripItem item in findToolStripMenuItem.DropDownItems)
-                    item.Enabled = false;
+                //foreach (ToolStripItem item in findToolStripMenuItem.DropDownItems)
+                //    item.Enabled = false;
 
-                keyBoardToolStripMenuItem.Enabled = true;
-                mainExitToolStripMenuItem.Enabled = true;
-
-                //_backToolStripSplitButton.Enabled = false;
-                //_searchByLetterToolStripButton.Enabled = false;
+                mainSaveToUserDictToolStripMenuItem.Visible = false;
+                mainFindByLetterToolStripMenuItem.Visible = false;
+                toolStripSeparator3.Visible = false;
             }
         }
 
@@ -1395,10 +1389,26 @@ namespace SRWords
         {
             e.Cancel = false;
 
+            gridBackToolStripMenuItem.Visible = true;
+            gridHistToolStripMenuItem.Visible = true;
+            gridSaveHistToolStripMenuItem.Visible = true;
+            toolStripSeparator5.Visible = true;
+            gridSaveToUserDictToolStripMenuItem.Visible = true;
+            gridDelFromUserDictToolStripMenuItem.Visible = true;
+
+            if (currTableName == "words")
+            {
+                gridDelFromUserDictToolStripMenuItem.Visible = false;
+            }
             if (currTableName == "rus")
             {
-                e.Cancel = true;
-                return;
+                toolStripSeparator5.Visible = false;
+                gridSaveToUserDictToolStripMenuItem.Visible = false;
+                gridDelFromUserDictToolStripMenuItem.Visible = false;
+            }
+            if (currTableName == "dict")
+            {
+                gridSaveToUserDictToolStripMenuItem.Visible = false;
             }
 
             ContextMenuStrip tContextMenu = (ContextMenuStrip)sender;
@@ -2413,8 +2423,6 @@ namespace SRWords
         private void _wbContextMenuStrip_Opening(object sender, CancelEventArgs e)
         {
             wbBackToolStripMenuItem.Visible = true;
-            //wbSaveToUserDictToolStripMenuItem.Visible = true;
-            //wbDelFromUserDictToolStripMenuItem.Visible = true;
             wbHistToolStripMenuItem.Visible = true;
             wbSaveHistToolStripMenuItem.Visible = true;
             wbCopyToolStripSeparator.Visible = true;

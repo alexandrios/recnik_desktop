@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._wordsDataGridView = new System.Windows.Forms.DataGridView();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._gridContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gridAOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridAOWToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.gridBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridHistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridSaveHistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +47,6 @@
             this._backToolStripSplitButton = new System.Windows.Forms.ToolStripSplitButton();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._panelTextBox = new System.Windows.Forms.Panel();
-            this._searchTextBox = new SRWords.MyTextBox();
             this._panel = new System.Windows.Forms.Panel();
             this._panelGrid = new System.Windows.Forms.Panel();
             this._rusDataGridView = new System.Windows.Forms.DataGridView();
@@ -120,6 +117,11 @@
             this._langRightLabel = new System.Windows.Forms.Label();
             this._langLeftLabel = new System.Windows.Forms.Label();
             this._switchPictureBox = new System.Windows.Forms.PictureBox();
+            this._searchTextBox = new SRWords.MyTextBox();
+            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this._wordsDataGridView)).BeginInit();
             this._gridContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._srbBindingSource)).BeginInit();
@@ -160,15 +162,15 @@
             this.NAME});
             this._wordsDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._wordsDataGridView.DataSource = this._srbBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._wordsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this._wordsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._wordsDataGridView.EnableHeadersVisualStyles = false;
             this._wordsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -205,8 +207,6 @@
             // _gridContextMenuStrip
             // 
             this._gridContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gridAOWToolStripMenuItem,
-            this.gridAOWToolStripSeparator,
             this.gridBackToolStripMenuItem,
             this.gridHistToolStripMenuItem,
             this.gridSaveHistToolStripMenuItem,
@@ -215,18 +215,8 @@
             this.gridDelFromUserDictToolStripMenuItem});
             this._gridContextMenuStrip.Name = "alphaContextMenuStrip";
             this._gridContextMenuStrip.ShowImageMargin = false;
-            this._gridContextMenuStrip.Size = new System.Drawing.Size(382, 148);
+            this._gridContextMenuStrip.Size = new System.Drawing.Size(382, 142);
             this._gridContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._gridContextMenuStrip_Opening);
-            // 
-            // gridAOWToolStripMenuItem
-            // 
-            this.gridAOWToolStripMenuItem.Name = "gridAOWToolStripMenuItem";
-            this.gridAOWToolStripMenuItem.Size = new System.Drawing.Size(381, 22);
-            // 
-            // gridAOWToolStripSeparator
-            // 
-            this.gridAOWToolStripSeparator.Name = "gridAOWToolStripSeparator";
-            this.gridAOWToolStripSeparator.Size = new System.Drawing.Size(378, 6);
             // 
             // gridBackToolStripMenuItem
             // 
@@ -280,7 +270,6 @@
             this._oldContextMenuStrip.BackColor = System.Drawing.Color.White;
             this._oldContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._oldContextMenuStrip.Name = "oldContextMenuStrip";
-            this._oldContextMenuStrip.OwnerItem = this._backToolStripSplitButton;
             this._oldContextMenuStrip.ShowImageMargin = false;
             this._oldContextMenuStrip.Size = new System.Drawing.Size(36, 4);
             this._oldContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._oldContextMenuStrip_Opening);
@@ -346,21 +335,6 @@
             this._panelTextBox.Size = new System.Drawing.Size(154, 26);
             this._panelTextBox.TabIndex = 1;
             // 
-            // _searchTextBox
-            // 
-            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
-            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this._searchTextBox.MaxLength = 100;
-            this._searchTextBox.Name = "_searchTextBox";
-            this._searchTextBox.Size = new System.Drawing.Size(141, 25);
-            this._searchTextBox.TabIndex = 1;
-            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
-            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
-            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
-            // 
             // _panel
             // 
             this._panel.Controls.Add(this._panelGrid);
@@ -399,15 +373,15 @@
             this.dataGridViewTextBoxColumn2});
             this._rusDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._rusDataGridView.DataSource = this._rusBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._rusDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._rusDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._rusDataGridView.Location = new System.Drawing.Point(0, 0);
             this._rusDataGridView.MultiSelect = false;
@@ -455,15 +429,15 @@
             this.dataGridViewTextBoxColumn1});
             this._dictDataGridView.ContextMenuStrip = this._gridContextMenuStrip;
             this._dictDataGridView.DataSource = this._dictBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._dictDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this._dictDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dictDataGridView.Location = new System.Drawing.Point(0, 0);
             this._dictDataGridView.MultiSelect = false;
@@ -711,7 +685,6 @@
             this._dictContextMenuStrip.BackColor = System.Drawing.Color.White;
             this._dictContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._dictContextMenuStrip.Name = "oldContextMenuStrip";
-            this._dictContextMenuStrip.OwnerItem = this._dictToolStripSplitButton;
             this._dictContextMenuStrip.ShowCheckMargin = true;
             this._dictContextMenuStrip.ShowImageMargin = false;
             this._dictContextMenuStrip.Size = new System.Drawing.Size(61, 4);
@@ -951,38 +924,42 @@
             // 
             this._wbRusContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this._wbRusContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem18,
+            this.toolStripMenuItem19,
+            this.toolStripMenuItem20,
+            this.toolStripSeparator18,
             this._wbRusCopyToolStripMenuItem,
             this.toolStripSeparator9,
             this._wbRusShowAllToolStripMenuItem,
             this._wbRusHideAllToolStripMenuItem});
             this._wbRusContextMenuStrip.Name = "_wbContextMenuStrip";
             this._wbRusContextMenuStrip.ShowImageMargin = false;
-            this._wbRusContextMenuStrip.Size = new System.Drawing.Size(118, 76);
+            this._wbRusContextMenuStrip.Size = new System.Drawing.Size(203, 148);
             this._wbRusContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this._wbRusContextMenuStrip_Opening);
             // 
             // _wbRusCopyToolStripMenuItem
             // 
             this._wbRusCopyToolStripMenuItem.Name = "_wbRusCopyToolStripMenuItem";
-            this._wbRusCopyToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this._wbRusCopyToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this._wbRusCopyToolStripMenuItem.Text = "Копировать";
             this._wbRusCopyToolStripMenuItem.Click += new System.EventHandler(this.wbCopyToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(199, 6);
             // 
             // _wbRusShowAllToolStripMenuItem
             // 
             this._wbRusShowAllToolStripMenuItem.Name = "_wbRusShowAllToolStripMenuItem";
-            this._wbRusShowAllToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this._wbRusShowAllToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this._wbRusShowAllToolStripMenuItem.Text = "Открыть все";
             this._wbRusShowAllToolStripMenuItem.Click += new System.EventHandler(this.wbShowAllToolStripMenuItem_Click);
             // 
             // _wbRusHideAllToolStripMenuItem
             // 
             this._wbRusHideAllToolStripMenuItem.Name = "_wbRusHideAllToolStripMenuItem";
-            this._wbRusHideAllToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this._wbRusHideAllToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this._wbRusHideAllToolStripMenuItem.Text = "Закрыть все";
             this._wbRusHideAllToolStripMenuItem.Click += new System.EventHandler(this.wbHideAllToolStripMenuItem_Click);
             // 
@@ -1038,6 +1015,48 @@
             this._switchPictureBox.TabIndex = 0;
             this._switchPictureBox.TabStop = false;
             this._switchPictureBox.Click += new System.EventHandler(this._switchPictureBox_Click);
+            // 
+            // _searchTextBox
+            // 
+            this._searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._searchTextBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this._searchTextBox.Location = new System.Drawing.Point(8, 3);
+            this._searchTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this._searchTextBox.MaxLength = 100;
+            this._searchTextBox.Name = "_searchTextBox";
+            this._searchTextBox.Size = new System.Drawing.Size(141, 25);
+            this._searchTextBox.TabIndex = 1;
+            this._searchTextBox.SizeChanged += new System.EventHandler(this._searchTextBox_SizeChanged);
+            this._searchTextBox.TextChanged += new System.EventHandler(this._searchTextBox_TextChanged);
+            this._searchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._searchTextBox_KeyDown);
+            // 
+            // toolStripMenuItem18
+            // 
+            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+            this.toolStripMenuItem18.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(202, 22);
+            this.toolStripMenuItem18.Text = "Назад";
+            this.toolStripMenuItem18.Click += new System.EventHandler(this.mainBackToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem19
+            // 
+            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(202, 22);
+            this.toolStripMenuItem19.Text = "История поиска";
+            this.toolStripMenuItem19.Click += new System.EventHandler(this.mainHistToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem20
+            // 
+            this.toolStripMenuItem20.Name = "toolStripMenuItem20";
+            this.toolStripMenuItem20.Size = new System.Drawing.Size(202, 22);
+            this.toolStripMenuItem20.Text = "Сохранить слово в истории";
+            this.toolStripMenuItem20.Click += new System.EventHandler(this.mainSaveHistToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator18
+            // 
+            this.toolStripSeparator18.Name = "toolStripSeparator18";
+            this.toolStripSeparator18.Size = new System.Drawing.Size(199, 6);
             // 
             // ListForm
             // 
@@ -1101,7 +1120,6 @@
         public MyTextBox _searchTextBox;
         private System.Windows.Forms.ContextMenuStrip _oldContextMenuStrip;
         private System.Windows.Forms.ContextMenuStrip _gridContextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem gridAOWToolStripMenuItem;
         private System.Windows.Forms.SplitContainer _splitContainer;
         public System.Windows.Forms.WebBrowser _webBrowser;
         private System.Windows.Forms.ToolStrip _toolStrip;
@@ -1131,7 +1149,6 @@
         private System.Windows.Forms.ContextMenuStrip _dictContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem dictToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dictSetupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator gridAOWToolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem gridBackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridHistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridSaveHistToolStripMenuItem;
@@ -1184,5 +1201,9 @@
         private System.Windows.Forms.Label _askDonateLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem20;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
     }
 }

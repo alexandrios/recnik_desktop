@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SRWords")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Сербско-русский словарь")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SRWords5 2.0.0_2.0.1")]
+[assembly: AssemblyCompany("TouchByTouch")]
+[assembly: AssemblyProduct("SRWords 2.0.0_3.0.0")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
