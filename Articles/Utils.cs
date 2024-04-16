@@ -250,6 +250,7 @@ namespace SRWords.Articles
 
         public const string CSS_FILE_NAME = "style.css";
 
+        /*
         public static string HTMLStartString()
         {
             return "<HTML><HEAD>" +
@@ -266,6 +267,7 @@ namespace SRWords.Articles
         {
             return Environment.NewLine + "</BODY></HTML>";
         }
+        */
 
         /// <summary>
         /// Преобразование строки из кириллицы в латиницу.

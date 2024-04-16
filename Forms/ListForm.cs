@@ -2716,5 +2716,9 @@ namespace SRWords
             Mail.SendMail();
         }
 
+        private void _speechButton_Click(object sender, EventArgs e)
+        {
+            TextToSpeech.Say(currTableName, currWord.Name);
+        }
     }
 }
