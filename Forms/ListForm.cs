@@ -149,7 +149,6 @@ namespace SRWords
             // Дождаться окончания загрузки изменений с сервера
             remoteProcess.Join();
 
-
             if (LoadRusWhileStart == "1")
             {
                 // Загрузить русско-сербский словарь

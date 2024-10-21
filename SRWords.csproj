@@ -139,6 +139,7 @@
     <Compile Include="Controls\MyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utils\GoogleCloudTTS.cs" />
     <Compile Include="Utils\Mail.cs" />
     <Compile Include="Utils\OldWords.cs" />
     <Compile Include="Program.cs" />

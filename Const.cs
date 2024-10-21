@@ -12,5 +12,7 @@ namespace SRWords
         public const string IMG_EXPAND_MORE = "expand_more.png";
         public const string IMG_EXPAND_LESS = "expand_less.png";
         public const string IMG_EXPAND_PREFIX = "img_";
+
+        public const string AUTHORIZATION = "dD7be_!Wwu482-NKsj80";
     }
 }

@@ -43,7 +43,7 @@ namespace SRWords
             string parameters = String.Format("change_id={0}", change_id.ToString());
             ScanWord.Rest rest = new ScanWord.Rest();
             Debug.WriteLine("Обращение к серверу за списком изменений...");
-            List<ScanWord.ChangeInfo> info = rest.TakeNChangesStress(parameters);
+            List<ScanWord.ChangeInfo> info = rest.GetNchangesStress(parameters, Const.AUTHORIZATION);
             return info;
         }
     }

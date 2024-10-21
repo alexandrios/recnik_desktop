@@ -551,7 +551,7 @@ namespace SRWords
             string response = "";
             try
             {
-                response = rest.InsertRegistrInfo(parameters);
+                response = rest.InsertRegistrInfo(parameters, Const.AUTHORIZATION);
             }
             catch (Exception ex)
             {
@@ -575,7 +575,7 @@ namespace SRWords
             List<ScanWord.UserDonation> donation = null;
             try
             {
-                donation = rest.GetUserDonation(parameters);
+                donation = rest.GetUserDonation(parameters, Const.AUTHORIZATION);
             }
             catch (Exception ex)
             {
@@ -599,7 +599,7 @@ namespace SRWords
             List<ScanWord.UserDonation> donation = null;
             try
             {
-                donation = rest.GetUserDonation(parameters);
+                donation = rest.GetUserDonation(parameters, Const.AUTHORIZATION);
             }
             catch (Exception ex)
             {
