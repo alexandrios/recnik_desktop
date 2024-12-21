@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
-using System.Windows.Forms;
 using System.IO;
 using SRWords.Articles;
 
@@ -90,7 +89,7 @@ namespace SRWords
                 Css.MakeCss();
             }
 
-            finalString = ScanWord.Utils.HTMLStartString() + finalString + ScanWord.Utils.HTMLEndString();
+            finalString = Utils.HTMLStartString() + finalString + Utils.HTMLEndString();
 
             //_webBrowser.DocumentText = finalString;
 
@@ -184,7 +183,7 @@ namespace SRWords
                 Css.MakeCss();
             }
 
-            finalString = HTMLStartString() + finalString + ScanWord.Utils.HTMLEndString();
+            finalString = HTMLStartString() + finalString + Utils.HTMLEndString();
 
             //MessageBox.Show(finalString);
             //_webBrowser.DocumentText = finalString;

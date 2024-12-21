@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Diagnostics;
 
 namespace SRWords
@@ -14,7 +13,7 @@ namespace SRWords
         {
             try
             {
-                List<ScanWord.ChangeInfo> info = GetChangesList();
+                List<ChangeInfo> info = GetChangesList();
                 if (info == null)
                     return;
 
@@ -23,7 +22,7 @@ namespace SRWords
                 if (info.Count > 0)
                 {
                     Debug.WriteLine("Начинаем применять изменения, полученные с сервера");
-                    ScanWord.DBService.MakeChangesFromServer(info, new Repository2());
+                    DBService.MakeChangesFromServer(info, new Repository2());
                 }
             }
             catch (Exception ex)
@@ -36,14 +35,14 @@ namespace SRWords
         /// <summary>
         /// Получить изменения БД с сервера.
         /// </summary>
-        static private List<ScanWord.ChangeInfo> GetChangesList()
+        static private List<ChangeInfo> GetChangesList()
         {
             int change_id = Data.GetChangeId();
             Debug.WriteLine("Текущий код синхронизации = " + change_id.ToString());
             string parameters = String.Format("change_id={0}", change_id.ToString());
-            ScanWord.Rest rest = new ScanWord.Rest();
+            Rest rest = new Rest();
             Debug.WriteLine("Обращение к серверу за списком изменений...");
-            List<ScanWord.ChangeInfo> info = rest.GetNchangesStress(parameters, Const.AUTHORIZATION);
+            List<ChangeInfo> info = rest.GetNchangesStress(parameters, Const.AUTHORIZATION);
             return info;
         }
     }

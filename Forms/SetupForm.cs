@@ -989,7 +989,7 @@ namespace SRWords
 
         private static void DeleteHistoryFile(Int64 id)
         {
-            string saveFile = ScanWord.Utils.GetWorkDirectory() + Setup.HISTORY_FILE_NAME;
+            string saveFile = Utils.GetWorkDirectory() + Setup.HISTORY_FILE_NAME;
             string xmlFile = System.IO.Path.GetDirectoryName(saveFile) + "\\" +
               System.IO.Path.GetFileNameWithoutExtension(saveFile) + id.ToString() +
               System.IO.Path.GetExtension(saveFile);

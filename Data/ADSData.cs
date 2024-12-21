@@ -45,7 +45,7 @@ namespace SRWords
         {
             AdsConnection con;
             string path = String.Empty;
-            string workDir = ScanWord.Utils.GetWorkDirectory();
+            string workDir = Utils.GetWorkDirectory();
             
             workDir += "SrbDict";
 

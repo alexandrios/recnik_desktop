@@ -547,7 +547,7 @@ namespace SRWords
         {
             // Отослать логин, email, персональный код на сервер
             string parameters = String.Format("login={0}&email={1}&perscode={2}", login, email, RestansDay());
-            ScanWord.Rest rest = new ScanWord.Rest();
+            Rest rest = new Rest();
             string response = "";
             try
             {
@@ -571,8 +571,8 @@ namespace SRWords
         {
             // Убедиться, что информация записана на сервере в БД
             string parameters = String.Format("login={0}&email={1}&perscode={2}", login, email, RestansDay());
-            ScanWord.Rest rest = new ScanWord.Rest();
-            List<ScanWord.UserDonation> donation = null;
+            Rest rest = new Rest();
+            List<UserDonation> donation = null;
             try
             {
                 donation = rest.GetUserDonation(parameters, Const.AUTHORIZATION);
@@ -594,9 +594,9 @@ namespace SRWords
 
         public static DonateResult GetDonationInfo()
         {
-            ScanWord.Rest rest = new ScanWord.Rest();
+            Rest rest = new Rest();
             string parameters = String.Format("login={0}&email={1}&perscode={2}", GetLogin(), GetEmail(), RestansDay());
-            List<ScanWord.UserDonation> donation = null;
+            List<UserDonation> donation = null;
             try
             {
                 donation = rest.GetUserDonation(parameters, Const.AUTHORIZATION);

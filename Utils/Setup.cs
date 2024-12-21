@@ -5,7 +5,6 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Configuration;
 using System.Windows.Forms;
-using ScanWord;
 
 namespace SRWords
 {

@@ -87,9 +87,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ScanWord">
-      <HintPath>..\SRWords5\bin\Debug\ScanWord.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -106,12 +103,22 @@
     <Compile Include="Articles\ArticleInfo.cs" />
     <Compile Include="Articles\Utils.cs" />
     <Compile Include="Articles\WordInfo.cs" />
+    <Compile Include="Data\DBChanges\ChangeInfo.cs" />
+    <Compile Include="Data\DBChanges\DBService.cs" />
+    <Compile Include="Data\DBChanges\IRepository.cs" />
+    <Compile Include="Data\DBChanges\Letters.cs" />
+    <Compile Include="Data\DBChanges\Rest.cs" />
+    <Compile Include="Data\DBChanges\RusRef.cs" />
+    <Compile Include="Data\DBChanges\RusWord.cs" />
+    <Compile Include="Data\DBChanges\SrbWord.cs" />
+    <Compile Include="Data\DBChanges\UserDonation.cs" />
     <Compile Include="Login\InitOnlineForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\InitOnlineForm.Designer.cs">
       <DependentUpon>InitOnlineForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="Utils\Css.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\DBChanges\ChangesFromServer.cs" />
@@ -165,6 +172,7 @@
     <Compile Include="Utils\SRBWord.cs" />
     <Compile Include="Utils\TextToSpeech.cs" />
     <Compile Include="Utils\WordPack.cs" />
+    <Compile Include="Utils\XmlSerializableDictionary.cs" />
     <EmbeddedResource Include="Login\InitOnlineForm.resx">
       <DependentUpon>InitOnlineForm.cs</DependentUpon>
       <SubType>Designer</SubType>

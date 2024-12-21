@@ -31,7 +31,7 @@ namespace SRWords
             if (sqliteConnect != null && sqliteConnect.State == ConnectionState.Open)
                 return;
 
-            string workDir = ScanWord.Utils.GetWorkDirectory();
+            string workDir = Utils.GetWorkDirectory();
 #if SQLITE
             string path = "Data Source=" + workDir + "SrbNewDict\\SrbBase.db; ";
 #endif

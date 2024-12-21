@@ -835,9 +835,6 @@ namespace SRWords
                 string xmlString = dr["XML"].ToString();
                 //#endif
 
-                // Получить объект Article
-                //ScanWord.Article a = new ScanWord.Article();
-                
                 ArticleInfo a = new ArticleInfo();
 
                 a = a.Deserialize(xmlString);
@@ -882,7 +879,7 @@ namespace SRWords
                 Css.MakeCss();
             }
 
-            finalString = ScanWord.Utils.HTMLStartString() + finalString + ScanWord.Utils.HTMLEndString();
+            finalString = Utils.HTMLStartString() + finalString + Utils.HTMLEndString();
 
             //MessageBox.Show(finalString);
 
@@ -1865,7 +1862,7 @@ namespace SRWords
         /*
         private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string workDir = ScanWord.Utils.GetWorkDirectory();
+            string workDir = Utils.GetWorkDirectory();
             if (File.Exists(workDir + "SRWords.pdf"))
                 Help.ShowHelp(this, "SRWords.pdf");
             else
@@ -2353,8 +2350,6 @@ namespace SRWords
                 ArticleInfo a = new ArticleInfo();
                 a = a.Deserialize(xmlString);
 #else
-                // Получить объект Art
-                //ScanWord.Art a = new ScanWord.Art();
                 // Объект ArticleInfo
                 ArticleInfo a = new ArticleInfo();
                 a = a.Deserialize(xmlString);
@@ -2380,7 +2375,7 @@ namespace SRWords
                 Css.MakeCss();
             }
 
-            finalString = HTMLStartString() + finalString + ScanWord.Utils.HTMLEndString();
+            finalString = HTMLStartString() + finalString + Utils.HTMLEndString();
 
             //MessageBox.Show(finalString);
 

@@ -145,7 +145,7 @@ namespace SRWords
         // Помощь
         private void referenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string workDir = ScanWord.Utils.GetWorkDirectory();
+            string workDir = Utils.GetWorkDirectory();
             if (File.Exists(workDir + "SRWords.pdf"))
                 Help.ShowHelp(this, "SRWords.pdf");
             else

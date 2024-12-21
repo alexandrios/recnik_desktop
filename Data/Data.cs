@@ -561,7 +561,7 @@ namespace SRWords
         public static int SyllableNextLettersLat(string text, out List<String> sList)
         {
 #if DEMO || SQLITE
-            //text = ScanWord.Utils.LatToCyr(text);
+            //text = Utils.LatToCyr(text);
             String sql = "select distinct lower(substr(name_lat,1," + (text.Length + 1).ToString() +
                         ")) res from words where lower(name_lat) like '" + text + "%'";
             return SQLiteData.RunScriptResList(sql, out sList);

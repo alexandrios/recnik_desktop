@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using ScanWord;
 
 namespace SRWords
 {
+    /*
     // “екущее слово, показываемое в браузере
     public class SRBWord : Word
     {
@@ -16,13 +13,6 @@ namespace SRWords
 
         public SRBWord(DataRowView dr) : base (dr)
         {
-            //Id = (int)dr["ID"];
-            /*
-            string ids = dr["ID"].ToString();
-            int value = 0;
-            if (int.TryParse(ids, out value))
-                Id = value;
-            */
         }
 
         private int id;
@@ -32,4 +22,5 @@ namespace SRWords
             set { id = value; }
         }
     }
+    */
 }
