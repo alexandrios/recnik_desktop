@@ -248,27 +248,6 @@ namespace SRWords.Articles
             return list;
         }
 
-        public const string CSS_FILE_NAME = "style.css";
-
-        /*
-        public static string HTMLStartString()
-        {
-            return "<HTML><HEAD>" +
-                   "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"" + GetWorkDirectory() + CSS_FILE_NAME + "\">" + Environment.NewLine +
-                   "<META http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">" + Environment.NewLine +
-
-                   //"<title>Шрифт</title><style>@font-face {font-family: PTC55F; src: url(PTC55F.ttf); }" +
-                   //" .SrbWord  { color: #000000; font: normal 18px PTC55F;} </style>" +
-
-                   "</HEAD><BODY>" + Environment.NewLine;
-        }
-
-        public static string HTMLEndString()
-        {
-            return Environment.NewLine + "</BODY></HTML>";
-        }
-        */
-
         /// <summary>
         /// Преобразование строки из кириллицы в латиницу.
         /// </summary>
