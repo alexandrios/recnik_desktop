@@ -107,7 +107,7 @@ namespace SRWords
         /// <returns></returns>
         public List<ChangeInfo> GetNchangesStress(string parameters, string au)
         {
-            string jsonString = GetRequest("https://trans.h1n.ru/RdGetNchangesStress.php", parameters, au);
+            string jsonString = GetRequest("https://trans.h1n.ru/recnik_desktop_api/RdGetNchangesStress.php", parameters, au);
             List<ChangeInfo> info = JsonConvert.DeserializeObject<List<ChangeInfo>>(jsonString);
             return info;
         }
@@ -119,7 +119,7 @@ namespace SRWords
         /// <returns></returns>
         public string InsertRegistrInfo(string parameters, string au)
         {
-            return PostRequest("https://trans.h1n.ru/RdInsertRegistrInfo.php", parameters, au);
+            return PostRequest("https://trans.h1n.ru/recnik_desktop_api/RdInsertRegistrInfo.php", parameters, au);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace SRWords
         /// <returns></returns>
         public List<UserDonation> GetUserDonation(string parameters, string au)
         {
-            string jsonString = GetRequest("https://trans.h1n.ru/RdGetUserDonation.php", parameters, au);
+            string jsonString = GetRequest("https://trans.h1n.ru/recnik_desktop_api/RdGetUserDonation.php", parameters, au);
             List<UserDonation> info = JsonConvert.DeserializeObject<List<UserDonation>>(jsonString);
             return info;
         }
